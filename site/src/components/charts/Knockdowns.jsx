@@ -95,7 +95,7 @@ export const Knockdowns = () => {
                         handleAction={handlePresetClick}
                     />
                     <PresetChip 
-                        presetName='All Offender' 
+                        presetName="All (Offender)"
                         currentMoves={allowedMoves}  
                         preset={Object.keys(knockdowns)}
                         handleAction={handlePresetClick}

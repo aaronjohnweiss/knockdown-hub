@@ -4,7 +4,7 @@ import { useLocation, Outlet } from 'react-router';
 import Footer from './Footer';
 
 const breadcrumbNameMap = {
-  '/': 'Home',
+  '/': 'Knockdown Hub',
   '/app': 'App',
   '/charts': 'Charts',
   '/data': 'Data',
@@ -17,11 +17,13 @@ export const PageWrapper = () => {
     console.log(pathnames);
 
     return (
-        <Box display='flex' flexDirection='column'>
+        <Box display='flex' flexDirection='column' sx={{ flexGrow: 1 }}>
             <Typography variant='h1' component='h1' fontSize={'2em'} sx={{ marginY: 3 }}>
                 {breadcrumbNameMap[`/${pathnames[pathnames.length - 1]}`]}
             </Typography>
-            <Outlet />
+            <Box sx={{ flexGrow: 1 }}>
+                <Outlet />
+            </Box>
             <Footer />
         </Box>
     )

@@ -16,7 +16,7 @@ export const Footer = () => {
     const pathnames = location.pathname.split('/').filter((x) => x);
 
     return (
-        <Breadcrumbs aria-label="breadcrumb" separator="-" sx={{ position: "fixed", bottom: 15, color: theme => theme.palette.text.primary }}>
+        <Breadcrumbs aria-label="breadcrumb" separator="-" sx={{ paddingY: 3, color: theme => theme.palette.text.primary }}>
             <Link 
                 underline="hover" 
                 color="inherit" 
