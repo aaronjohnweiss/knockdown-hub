@@ -5,7 +5,7 @@ const StlyedBackground = styled(Paper)({
     position: 'absolute',
     top: 0,
     backgroundImage: 'url("./assets/fox-falcon.png")',
-    'mask-image': 'linear-gradient(180deg,transparent 0%,black 30%,black 80%,transparent 100%), linear-gradient(90deg,transparent 0%,black 40%,black 70%,transparent 100%); mask-composite: intersect',
+    maskImage: 'linear-gradient(180deg,transparent 0%,black 30%,black 80%,transparent 100%), linear-gradient(90deg,transparent 0%,black 40%,black 70%,transparent 100%); mask-composite: intersect',
     backgroundRepeat: 'no-repeat',
     minHeight: '700px',
     left: '30%',

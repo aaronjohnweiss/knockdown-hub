@@ -14,7 +14,6 @@ const breadcrumbNameMap = {
 export const PageWrapper = () => {
     const location = useLocation();
     const pathnames = location.pathname.split('/');
-    console.log(pathnames);
 
     return (
         <Box display='flex' flexDirection='column' sx={{ flexGrow: 1 }}>

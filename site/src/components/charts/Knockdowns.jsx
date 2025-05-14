@@ -1,10 +1,26 @@
 import React from 'react';
-import { Box, IconButton, Paper, Tooltip, Divider, Typography, Grid } from '@mui/material';
+import { 
+    Box, 
+    IconButton, 
+    Paper, 
+    Tooltip, 
+    Divider, 
+    Typography, 
+    Grid,
+    Table,
+    TableBody,
+    TableCell,
+    TableContainer,
+    TableHead,
+    TableRow
+} from '@mui/material';
 import { CharacterSelector } from './CharacterSelector';
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 import knockdown_data from '../../../../shared/knockdown_data.json';
+import cc_knockdown_data from '../../../../shared/cc_knockdown_data.json';
 import MovesetFilter from './MovesetFilter';
 import PresetChip from './PresetChip';
+import KnockdownTable from './KnockdownTable';
 
 export const Knockdowns = () => {
     const [offenderId, setOffenderId] = React.useState(0);
@@ -29,7 +45,10 @@ export const Knockdowns = () => {
     }, [allowedMoves])
 
     const knockdowns = React.useMemo(() => {
-        return knockdown_data[`${offenderId}`]
+        return ({
+            asdi: knockdown_data[`${offenderId}`],
+            cc: cc_knockdown_data[`${offenderId}`]
+        })
     }, [offenderId]);
 
     const rows = React.useMemo(() => Object.keys(knockdowns)
@@ -39,9 +58,18 @@ export const Knockdowns = () => {
         [recipientId, knockdowns, allowedMoves]
     );
 
+    const tableRows = React.useMemo(() => Object.keys(knockdowns.asdi)
+        .filter(move => knockdowns.asdi[move][recipientId] > -1)
+        .filter(move => allowedMoves.includes(move))
+        .sort((a, b) => knockdowns.asdi[a][recipientId] - knockdowns.asdi[b][recipientId])
+        .map(move => ({ move, asdi: knockdowns.asdi[move][recipientId], cc: knockdowns.cc[move][recipientId] })),
+        [recipientId, knockdowns, allowedMoves]
+    );
+
+
     return (
         <Grid container spacing={2} >
-            <Grid size={{ xs: 12, sm: 8 }}>
+            <Grid size={{ xs: 12, sm: 7 }}>
                 <Typography variant='h5' component='h2' sx={{ paddingBottom: 2 }} >
                     Select Characters
                 </Typography>
@@ -97,34 +125,17 @@ export const Knockdowns = () => {
                     <PresetChip 
                         presetName="All (Offender)"
                         currentMoves={allowedMoves}  
-                        preset={Object.keys(knockdowns)}
+                        preset={Object.keys(knockdowns.asdi)}
                         handleAction={handlePresetClick}
-                    />
+                    />            
                 </Box>
             </Grid>
-            <Grid size={{ xs: 12, sm: 4 }}>
-                <Typography variant='h5' component='h2' sx={{ paddingY: 2 }} >
+            <Grid size={{ xs: 12, sm: 5 }} gap={1}>
+                <Typography variant='h5' component='h2' sx={{ paddingBottom: 2 }} >
                     Knockdowns
                 </Typography>
-                <Paper key={`knockdowns-${offenderId}-${recipientId}`} elevation={3} sx={{ maxHeight: '600px', overflow: 'auto' }}>
-                    {rows.map((key, idx) => (
-                        <div key={idx}>
-                            <Box
-                                display='flex'
-                                flexDirection='row'
-                                p={1}
-                            >
-                                <Typography sx={{ flexGrow: 1 }} >
-                                    {key}
-                                </Typography>
-                                <Typography sx={{ paddingRight: 2 }}>
-                                    {knockdowns[key][recipientId]}%
-                                </Typography>
-                            </Box>
-                            {idx !== rows.length - 1 && <Divider flexItem orientation='horizontal' />}
-                        </div>
-                    ))}
-                </Paper>
+                <KnockdownTable rows={tableRows} />
+                
             </Grid>
         </Grid>
     )
