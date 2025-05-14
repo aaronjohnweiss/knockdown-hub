@@ -6,13 +6,15 @@ const StlyedBackground = styled(Paper)({
     top: 0,
     backgroundPosition: 'center',
     backgroundImage: 'url("./assets/fox-falcon.png")',
-    'mask-image': 'linear-gradient(180deg,transparent 0%,black 10%,black 80%,transparent 100%), linear-gradient(90deg,transparent 0%,black 30%,black 90%,transparent 100%); mask-composite: intersect',
-    backgroundRepeat: 'none',
+    'mask-image': 'linear-gradient(180deg,transparent 0%,black 30%,black 80%,transparent 100%), linear-gradient(90deg,transparent 0%,black 40%,black 70%,transparent 100%); mask-composite: intersect',
+    backgroundRepeat: 'no-repeat',
     minHeight: '700px',
-    minWidth: '100%',
-    // backgroundPosition: '-150px -180px',
-    opacity: '20%',
-    overflow: 'hidden'
+    left: '30%',
+    right: '0',
+    backgroundPosition: 'center',
+    opacity: '50%',
+    overflow: 'hidden',
+    zIndex: -5
 });
 
 export const Home = () => {
@@ -31,15 +33,15 @@ export const Home = () => {
         </Grid>
         <Grid size={{ xs: 6, md: 4 }}>
         </Grid>
-        <Grid size={{ xs: 6, md: 8 }}>
+        <Grid size={{ xs: 12, md: 8 }}>
             <Typography>
                 Want to dive deeper into the specifics of which moves cause knockdown for each character? Head over to our interactive "Charts" page. There, you'll find comprehensive, character-specific breakdowns of moves and their knockdown properties, allowing you to explore frame data and knockback values in detail.
             </Typography>
         </Grid>
-        <Grid size={{ xs: 6, md: 6 }}>
+        <Grid size={{ xs: 12, md: 6 }}>
             
         </Grid>
-        <Grid size={{ xs: 6, md: 6 }}>
+        <Grid size={{ xs: 12, md: 6 }}>
             <Typography>
                 Go beyond pages of data with the downloadable app for enhanced features such as real-time chart updates during Slippi matches. 
             </Typography>
