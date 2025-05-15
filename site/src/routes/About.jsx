@@ -40,7 +40,7 @@ export const Home = () => {
             </Grid>
             <Grid size={{ xs: 6 }}>
                 <Typography>
-                    On this site - the <Link to='/charts'>Charts</Link> page contains comprehensive, matchup-specific breakdowns of moves and their knockdown properties, allowing you to explore frame data and knockback values in detail.
+                    On this site - the <Link to='/charts'>charts</Link> page contains comprehensive, matchup-specific breakdowns of moves and their knockdown properties, allowing you to explore frame data and knockback values in detail.
                 </Typography>
             </Grid>
             <Grid size={{ xs: 6 }}>
@@ -63,7 +63,7 @@ export const Home = () => {
                 Show me the data
             </Typography>
             <Typography>
-                Visit the <Link to='/data'>Data</Link> page to learn about this data - including collection methodology, its caveats and other limitations. Contribute your own findings to help make this resource even more comprehensive and accurate for the Melee community.
+                Visit the <Link to='/data'>data</Link> page to learn about this data - including collection methodology, its caveats and other limitations. Contribute your own findings to help make this resource even more comprehensive and accurate for the Melee community.
             </Typography>
         </Grid>
         </Grid>
