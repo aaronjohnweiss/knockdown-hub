@@ -1,10 +1,10 @@
-
+import React from 'react';
 import { Box, Typography } from '@mui/material';
 import { useLocation, Outlet } from 'react-router';
 import Footer from './Footer';
 
 const breadcrumbNameMap = {
-  '/': 'Knockdown Hub',
+  '/': 'Welcome',
   '/app': 'App',
   '/charts': 'Charts',
   '/data': 'Data',
@@ -14,6 +14,10 @@ const breadcrumbNameMap = {
 export const PageWrapper = () => {
     const location = useLocation();
     const pathnames = location.pathname.split('/');
+
+    React.useEffect(() => {
+        document.title = `KnowYourPercents - ${breadcrumbNameMap[`/${pathnames[pathnames.length - 1]}`]}`
+    }), [pathnames];
 
     return (
         <Box display='flex' flexDirection='column' sx={{ flexGrow: 1 }}>

@@ -70,7 +70,7 @@ const CustomAppBar = () => {
                   ))}
                 </Menu>
               </Box>
-              <Box flexDirection='row' alignItems='center' flexGrow={1} sx={{ display: { xs: 'none', md: 'flex' } }}>
+              <Box flexDirection='row' alignItems='center' flexGrow={1} sx={{ display: { xs: 'none', md: 'flex' } }} gap={1}>
                 <IconButton
                   aria-label="home"
                   color="inherit"
@@ -83,7 +83,7 @@ const CustomAppBar = () => {
                   {pages.map((page) => (
                     <Button
                       key={page}
-                      sx={{ color: 'white', display: 'block' }}
+                      sx={{ color: 'white', display: 'block', marginTop: '2px' }}
                       component={Link}
                       to={`/${page.toLocaleLowerCase()}`}
                     >

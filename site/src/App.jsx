@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router";
+import { Routes, Route, Navigate } from "react-router";
 import AppBar from './components/AppBar.jsx';
 import About from './routes/About.jsx';
 import Charts from './routes/Charts.jsx';
@@ -21,6 +21,7 @@ function App() {
             <Route path='app' element={<Application />} />
             <Route path='data' element={<Data />} />
             <Route path='support' element={<Support />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
            </Route>
         </Routes>
       </Container>
