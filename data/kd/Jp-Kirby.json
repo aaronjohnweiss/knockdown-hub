@@ -1,0 +1,169 @@
+{
+    "Jp": {
+        "Kirby": {
+            "dthrow": {
+                "id0": 0
+            },
+            "bthrow": {
+                "id0": 0
+            },
+            "uthrow": {
+                "id0": 0
+            },
+            "ft_hitbox": {
+                "id0": 18
+            },
+            "fthrow": {
+                "id0": 0
+            },
+            "pummel": {
+                "id0": -1
+            },
+            "edge": {
+                "fast": {
+                    "id1": 0,
+                    "id0": 0
+                },
+                "slow": {
+                    "id1": 0,
+                    "id0": 0
+                }
+            },
+            "floor": {
+                "front_hit2": {
+                    "id1": 0,
+                    "id0": 0
+                },
+                "front_hit1": {
+                    "id1": 0,
+                    "id0": 0
+                },
+                "back_hit2": {
+                    "id3": 0,
+                    "id2": 0,
+                    "id1": 0,
+                    "id0": 0
+                },
+                "back_hit1": {
+                    "id3": 0,
+                    "id2": 0,
+                    "id1": 0,
+                    "id0": 0
+                }
+            },
+            "dair": {
+                "id3": 156,
+                "id2": 156,
+                "id1": 126,
+                "id0": 126
+            },
+            "uair": {
+                "id1": 16
+            },
+            "bair": {
+                "id2": 34,
+                "id1": 34,
+                "id0": 34
+            },
+            "fair": {
+                "late": {
+                    "id1": 87,
+                    "id0": 87
+                },
+                "clean": {
+                    "id1": 43,
+                    "id0": 34
+                }
+            },
+            "nair": {
+                "late": {
+                    "id1": 68,
+                    "id0": 68
+                },
+                "clean": {
+                    "id1": 60,
+                    "id0": 60
+                }
+            },
+            "dsmash": {
+                "id3": 33,
+                "id2": 33,
+                "id1": 33,
+                "id0": 33
+            },
+            "usmash": {
+                "id1": 12,
+                "id0": 14
+            },
+            "fsmash": {
+                "late": {
+                    "id1": 30,
+                    "id0": 30
+                },
+                "clean": {
+                    "id1": 10,
+                    "id0": 10
+                }
+            },
+            "dtilt": {
+                "id2": 107,
+                "id1": 107,
+                "id0": 107
+            },
+            "utilt": {
+                "late": {
+                    "id1": 11,
+                    "id0": 11
+                },
+                "clean": {
+                    "id1": 8,
+                    "id0": 8
+                }
+            },
+            "ftilt": {
+                "id1": 45,
+                "id0": 45
+            },
+            "dash": {
+                "late": {
+                    "id0": 58
+                },
+                "clean": {
+                    "id0": 28
+                }
+            },
+            "jab": {
+                "hit2": {
+                    "id2": -1,
+                    "id1": -1,
+                    "id0": -1
+                },
+                "hit1": {
+                    "id2": -1,
+                    "id1": -1,
+                    "id0": -1
+                }
+            },
+            "downSpecial": {
+                "id0": 0
+            },
+            "upSpecial": {
+                "id0": -1
+            },
+            "sideSpecial": {
+                "id1": 3,
+                "id0": 3
+            },
+            "neutralSpecial": {
+                "air": {
+                    "id0": 22
+                },
+                "ground": {
+                    "id2": 14,
+                    "id1": 14,
+                    "id0": 14
+                }
+            }
+        }
+    }
+}

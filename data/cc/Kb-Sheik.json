@@ -1,0 +1,592 @@
+{
+    "Kb": {
+        "Sheik": {
+            "dthrow": {
+                "id0": -1
+            },
+            "uthrow": {
+                "id0": 54
+            },
+            "bthrow": {
+                "id0": 81
+            },
+            "fthrow": {
+                "id0": 81
+            },
+            "SamusSpecial": {
+                "lvl_7": {
+                    "id0": 19
+                },
+                "lvl_6": {
+                    "id0": 44
+                },
+                "lvl_5": {
+                    "id0": 67
+                },
+                "lvl_4": {
+                    "id0": 106
+                },
+                "lvl_3": {
+                    "id0": 156
+                },
+                "lvl_2": {
+                    "id0": -1
+                },
+                "lvl_1": {
+                    "id0": -1
+                },
+                "lvl_0": {
+                    "id0": -1
+                }
+            },
+            "PikaSpecial": {
+                "ground": {
+                    "id1": -1,
+                    "id0": -1
+                },
+                "air": {
+                    "id0": -1
+                }
+            },
+            "PichuSpecial": {
+                "ground": {
+                    "id1": -1,
+                    "id0": -1
+                },
+                "air": {
+                    "id0": -1
+                }
+            },
+            "PeachSpecial": {
+                "id0": 165
+            },
+            "NessSpecial": {
+                "lvl_25": {
+                    "id0": 9
+                },
+                "lvl_24": {
+                    "id0": 11
+                },
+                "lvl_23": {
+                    "id0": 14
+                },
+                "lvl_22": {
+                    "id0": 16
+                },
+                "lvl_21": {
+                    "id0": 18
+                },
+                "lvl_20": {
+                    "id0": 21
+                },
+                "lvl_19": {
+                    "id0": 23
+                },
+                "lvl_18": {
+                    "id0": 26
+                },
+                "lvl_17": {
+                    "id0": 29
+                },
+                "lvl_16": {
+                    "id0": 32
+                },
+                "lvl_15": {
+                    "id0": 35
+                },
+                "lvl_14": {
+                    "id0": 38
+                },
+                "lvl_13": {
+                    "id0": 42
+                },
+                "lvl_12": {
+                    "id0": 45
+                },
+                "lvl_11": {
+                    "id0": 49
+                },
+                "lvl_10": {
+                    "id0": 53
+                },
+                "lvl_9": {
+                    "id0": 57
+                },
+                "lvl_8": {
+                    "id0": 62
+                },
+                "lvl_7": {
+                    "id0": 67
+                },
+                "lvl_6": {
+                    "id0": 73
+                },
+                "lvl_5": {
+                    "id0": 79
+                },
+                "lvl_4": {
+                    "id0": 85
+                },
+                "lvl_3": {
+                    "id0": 92
+                },
+                "lvl_2": {
+                    "id0": 100
+                },
+                "lvl_1": {
+                    "id0": 109
+                },
+                "lvl_0": {
+                    "id0": 120
+                }
+            },
+            "MarioSpecial": {
+                "id0": -1
+            },
+            "LuigiSpecial": {
+                "id0": -1
+            },
+            "LinkSpecial": {
+                "fully_charge": {
+                    "id0": 122
+                },
+                "lvl_9_charge": {
+                    "id0": 161
+                },
+                "lvl_8_charge": {
+                    "id0": 174
+                },
+                "lvl_7_charge": {
+                    "id0": 188
+                },
+                "lvl_6_charge": {
+                    "id0": -1
+                },
+                "lvl_5_charge": {
+                    "id0": -1
+                },
+                "lvl_4_charge": {
+                    "id0": -1
+                },
+                "lvl_3_charge": {
+                    "id0": -1
+                },
+                "lvl_2_charge": {
+                    "id0": -1
+                },
+                "lvl_1_charge": {
+                    "id0": -1
+                },
+                "no_charge": {
+                    "id0": -1
+                },
+                "pointblank": {
+                    "id0": -1
+                }
+            },
+            "BowserSpecial": {
+                "id0": -1
+            },
+            "pummel": {
+                "id0": -1
+            },
+            "edge": {
+                "fast": {
+                    "id1": -1,
+                    "id0": -1
+                },
+                "slow": {
+                    "id1": -1,
+                    "id0": -1
+                }
+            },
+            "floor": {
+                "front_hit2_late": {
+                    "id2": 99,
+                    "id1": 99,
+                    "id0": 99
+                },
+                "front_hit2_clean": {
+                    "id2": 99,
+                    "id1": 99,
+                    "id0": 99
+                },
+                "front_hit1": {
+                    "id2": 99,
+                    "id1": 99,
+                    "id0": 99
+                },
+                "back_hit2": {
+                    "id3": 99,
+                    "id2": 99,
+                    "id1": 99,
+                    "id0": 99
+                },
+                "back_hit1": {
+                    "id3": 99,
+                    "id2": 99,
+                    "id1": 99,
+                    "id0": 99
+                }
+            },
+            "dair": {
+                "landing": {
+                    "id1": -1,
+                    "id0": -1
+                },
+                "hits1_6": {
+                    "id1": 193,
+                    "id0": 193
+                }
+            },
+            "uair": {
+                "id1": 43
+            },
+            "bair": {
+                "late": {
+                    "id1": 106,
+                    "id0": 106
+                },
+                "clean": {
+                    "id1": 64,
+                    "id0": 64
+                }
+            },
+            "fair": {
+                "landing": {
+                    "id1": -1,
+                    "id0": -1
+                },
+                "hit3": {
+                    "id1": 62,
+                    "id0": 62
+                },
+                "hit2": {
+                    "id1": -1,
+                    "id0": -1
+                },
+                "hit1": {
+                    "id1": -1,
+                    "id0": -1
+                }
+            },
+            "nair": {
+                "id0": 104
+            },
+            "dsmash": {
+                "id3": 77,
+                "id2": 77,
+                "id1": 48,
+                "id0": 48
+            },
+            "usmash": {
+                "late": {
+                    "id2": 184,
+                    "id1": 170,
+                    "id0": 170
+                },
+                "mid": {
+                    "id2": 68,
+                    "id1": 56,
+                    "id0": 56
+                },
+                "clean": {
+                    "id2": 45,
+                    "id1": 32,
+                    "id0": 32
+                }
+            },
+            "fsmash": {
+                "late": {
+                    "id2": 67,
+                    "id1": 67,
+                    "id0": 67
+                },
+                "clean": {
+                    "id2": 51,
+                    "id1": 51,
+                    "id0": 51
+                }
+            },
+            "dtilt": {
+                "id1": -1,
+                "id0": -1
+            },
+            "utilt": {
+                "late": {
+                    "id1": 83,
+                    "id0": 79
+                },
+                "clean": {
+                    "id1": 63,
+                    "id0": 60
+                }
+            },
+            "ftilt": {
+                "id1": 88,
+                "id0": 88
+            },
+            "dash": {
+                "late": {
+                    "id0": 166
+                },
+                "clean": {
+                    "id0": 71
+                }
+            },
+            "jab": {
+                "inf": {
+                    "id1": -1,
+                    "id0": -1
+                },
+                "hit2": {
+                    "id1": -1,
+                    "id0": -1
+                },
+                "hit1": {
+                    "id1": -1,
+                    "id0": -1
+                }
+            },
+            "neutralSpecial": {
+                "spit_star": {
+                    "id0": 106
+                }
+            },
+            "MrGandWSpecial": {
+                "sausage": {
+                    "id0": -1
+                },
+                "pan": {
+                    "id0": -1
+                }
+            },
+            "YoshiSpecial": {
+                "id2": -1,
+                "id1": -1,
+                "id0": -1
+            },
+            "MewtwoSpecial": {
+                "lvl_7": {
+                    "id0": 10
+                },
+                "lvl_6": {
+                    "id0": 31
+                },
+                "lvl_5": {
+                    "id0": 52
+                },
+                "lvl_4": {
+                    "id0": 82
+                },
+                "lvl_3": {
+                    "id0": 127
+                },
+                "lvl_2": {
+                    "id0": -1
+                },
+                "lvl_1": {
+                    "id0": -1
+                },
+                "lvl_0": {
+                    "id0": -1
+                },
+                "air_charging": {
+                    "id0": -1
+                },
+                "ground_charging": {
+                    "id0": -1
+                }
+            },
+            "RoySpecial": {
+                "charged": {
+                    "id2": 0,
+                    "id1": 0,
+                    "id0": 0
+                },
+                "uncharged": {
+                    "id3": 87,
+                    "id2": 87,
+                    "id1": 87,
+                    "id0": 87
+                }
+            },
+            "MarthSpecial": {
+                "charged": {
+                    "id2": 5,
+                    "id1": 3,
+                    "id0": 1
+                },
+                "uncharged": {
+                    "id2": 102,
+                    "id1": 96,
+                    "id0": 87
+                }
+            },
+            "PuffSpecial": {
+                "air": {
+                    "id0": 70
+                },
+                "ground": {
+                    "id0": 55
+                }
+            },
+            "ZeldaSpecial": {
+                "hit6": {
+                    "id3": 137,
+                    "id2": 137,
+                    "id1": 96,
+                    "id0": 96
+                },
+                "hits1_5": {
+                    "id3": -1,
+                    "id2": -1,
+                    "id1": -1,
+                    "id0": -1
+                }
+            },
+            "DKSpecial": {
+                "air_charged_clean": {
+                    "id2": 22,
+                    "id1": 22,
+                    "id0": 22
+                },
+                "air_charged_early": {
+                    "id2": 38,
+                    "id1": 38,
+                    "id0": 38
+                },
+                "air_uncharged_clean": {
+                    "id1": 89,
+                    "id0": 89
+                },
+                "air_uncharged_early": {
+                    "id1": 73,
+                    "id0": 73
+                },
+                "ground_charged_clean": {
+                    "id2": 15,
+                    "id1": 15,
+                    "id0": 15
+                },
+                "ground_charged_early": {
+                    "id2": 31,
+                    "id1": 31,
+                    "id0": 31
+                },
+                "ground_uncharged_clean": {
+                    "id1": 89,
+                    "id0": 89
+                },
+                "ground_uncharged_early": {
+                    "id1": 73,
+                    "id0": 73
+                }
+            },
+            "GanonSpecial": {
+                "air": {
+                    "id1": 0,
+                    "id0": 0
+                },
+                "ground": {
+                    "id1": 0,
+                    "id0": 1
+                }
+            },
+            "FalconSpecial": {
+                "air": {
+                    "id1": 2,
+                    "id0": 10
+                },
+                "ground": {
+                    "id1": 6,
+                    "id0": 16
+                }
+            },
+            "downSpecial": {
+                "id0": 38
+            },
+            "upSpecial": {
+                "hit2": {
+                    "id0": -1
+                },
+                "hit1": {
+                    "id3": -1,
+                    "id2": -1,
+                    "id1": -1,
+                    "id0": -1
+                },
+                "wave": {
+                    "id0": -1
+                }
+            },
+            "sideSpecial": {
+                "air_hits6_10": {
+                    "id1": -1,
+                    "id0": -1
+                },
+                "air_hits1_5": {
+                    "id1": -1,
+                    "id0": -1
+                },
+                "ground": {
+                    "id2": 7,
+                    "id1": 76,
+                    "id0": 76
+                }
+            },
+            "FoxSpecial": {
+                "id3": -1,
+                "id2": -1,
+                "id1": -1,
+                "id0": -1
+            },
+            "FalcoSpecial": {
+                "id3": -1,
+                "id2": -1,
+                "id1": -1,
+                "id0": -1
+            },
+            "DocSpecial": {
+                "id0": -1
+            },
+            "YLinkSpecial": {
+                "fully_charged": {
+                    "id0": 171
+                },
+                "lvl_4_charge": {
+                    "id0": -1
+                },
+                "lvl_3_charge": {
+                    "id0": -1
+                },
+                "lvl_2_charge": {
+                    "id0": -1
+                },
+                "lvl_1_charge": {
+                    "id0": -1
+                },
+                "no_charge": {
+                    "id0": -1
+                },
+                "pointblank": {
+                    "id0": -1
+                }
+            },
+            "ICsSpecial": {
+                "melee": {
+                    "id0": 51
+                },
+                "shot": {
+                    "id0": -1
+                }
+            },
+            "SheikSpecial": {
+                "id3": -1,
+                "id2": -1,
+                "id1": -1,
+                "id0": -1
+            }
+        }
+    }
+}

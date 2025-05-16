@@ -1,0 +1,223 @@
+{
+    "Bw": {
+        "Yoshi": {
+            "dthrow": {
+                "id0": 0
+            },
+            "uthrow": {
+                "id0": 0
+            },
+            "bthrow": {
+                "id0": 17
+            },
+            "fthrow": {
+                "id0": 17
+            },
+            "pummel": {
+                "id0": -1
+            },
+            "edge": {
+                "fast": {
+                    "id1": -1,
+                    "id0": -1
+                },
+                "slow": {
+                    "id1": -1,
+                    "id0": -1
+                }
+            },
+            "floor": {
+                "front_hit2": {
+                    "id3": 0,
+                    "id2": 0,
+                    "id1": 0,
+                    "id0": 0
+                },
+                "front_hit1": {
+                    "id2": 0,
+                    "id1": 0,
+                    "id0": 0
+                },
+                "back_hit2": {
+                    "id2": 0,
+                    "id1": 0,
+                    "id0": 0
+                },
+                "back_hit1": {
+                    "id2": 0,
+                    "id1": 0,
+                    "id0": 0
+                }
+            },
+            "dair": {
+                "landing": {
+                    "id1": -1,
+                    "id0": -1
+                },
+                "hits1_9": {
+                    "id0": -1
+                }
+            },
+            "uair": {
+                "id0": 0
+            },
+            "bair": {
+                "late": {
+                    "id0": 60
+                },
+                "clean": {
+                    "id0": 38
+                }
+            },
+            "fair": {
+                "id2": 12,
+                "id1": 9,
+                "id0": 5
+            },
+            "nair": {
+                "id0": 44
+            },
+            "dsmash": {
+                "hit7": {
+                    "id0": 4
+                },
+                "hits1_6": {
+                    "id3": -1,
+                    "id2": -1,
+                    "id1": -1,
+                    "id0": -1
+                }
+            },
+            "usmash": {
+                "hit2": {
+                    "id1": 0,
+                    "id0": 0
+                },
+                "hit1": {
+                    "id1": 6,
+                    "id0": 0
+                }
+            },
+            "fsmash": {
+                "id1": 0,
+                "id0": 0
+            },
+            "dtilt": {
+                "hit2": {
+                    "id1": 52,
+                    "id0": 52
+                },
+                "hit1": {
+                    "id1": 34,
+                    "id0": 34
+                }
+            },
+            "utilt": {
+                "id1": 3,
+                "id0": 3
+            },
+            "ftilt": {
+                "ang_down": {
+                    "id2": 18,
+                    "id1": 24,
+                    "id0": 18
+                },
+                "ang_side": {
+                    "id2": 24,
+                    "id1": 28,
+                    "id0": 21
+                },
+                "ang_up": {
+                    "id2": 14,
+                    "id1": 20,
+                    "id0": 14
+                }
+            },
+            "dash": {
+                "late": {
+                    "id0": 0
+                },
+                "clean": {
+                    "id1": 0,
+                    "id0": 0
+                }
+            },
+            "jab": {
+                "hit2": {
+                    "id2": 45,
+                    "id1": 45,
+                    "id0": 45
+                },
+                "hit1": {
+                    "id2": -1,
+                    "id1": -1,
+                    "id0": -1
+                }
+            },
+            "neutralSpecial": {
+                "id0": -1
+            },
+            "downSpecial": {
+                "landing": {
+                    "id0": 7
+                },
+                "air": {
+                    "id0": 0
+                },
+                "ground": {
+                    "id0": 0
+                }
+            },
+            "upSpecial": {
+                "air_hits7_11": {
+                    "id0": -1
+                },
+                "air_hits2_6": {
+                    "id0": -1
+                },
+                "air_hit1": {
+                    "id0": 0
+                },
+                "ground_hits7_11": {
+                    "id1": 122,
+                    "id0": 122
+                },
+                "ground_hits2_6": {
+                    "id1": 0,
+                    "id0": 0
+                },
+                "ground_hit1": {
+                    "id1": 0,
+                    "id0": 0
+                }
+            },
+            "sideSpecial": {
+                "bthrow_air": {
+                    "id0": 0
+                },
+                "bthrow": {
+                    "id0": 0
+                },
+                "fthrow_hit": {
+                    "id0": 0
+                },
+                "fthrow": {
+                    "id0": -1
+                },
+                "fthrow_air": {
+                    "id0": -1
+                },
+                "bite": {
+                    "id0": -1
+                },
+                "slash": {
+                    "id3": 0,
+                    "id2": 0
+                }
+            },
+            "unknown": {
+                "id0": 54
+            }
+        }
+    }
+}

@@ -1,0 +1,269 @@
+{
+    "DK": {
+        "Popo": {
+            "cargo_dthrow": {
+                "id0": -1
+            },
+            "cargo_uthrow": {
+                "id0": 123
+            },
+            "cargo_bthrow": {
+                "id0": 81
+            },
+            "cargo_fthrow": {
+                "id0": 81
+            },
+            "dthrow": {
+                "id0": 176
+            },
+            "uthrow": {
+                "id0": 98
+            },
+            "bthrow": {
+                "id0": 71
+            },
+            "pummel": {
+                "id0": -1
+            },
+            "edge": {
+                "fast": {
+                    "id0": -1
+                },
+                "slow": {
+                    "id2": -1,
+                    "id1": -1,
+                    "id0": -1
+                }
+            },
+            "floor": {
+                "front_hit2": {
+                    "id2": 98,
+                    "id1": 98,
+                    "id0": 98
+                },
+                "front_hit1": {
+                    "id2": 98,
+                    "id1": 98,
+                    "id0": 98
+                },
+                "back_hit2": {
+                    "id3": 98,
+                    "id2": 98,
+                    "id1": 98,
+                    "id0": 98
+                },
+                "back_hit1": {
+                    "id3": 98,
+                    "id2": 98,
+                    "id1": 98,
+                    "id0": 98
+                }
+            },
+            "dair": {
+                "id2": 71,
+                "id1": 71,
+                "id0": 39
+            },
+            "uair": {
+                "id0": 53
+            },
+            "bair": {
+                "late": {
+                    "id1": 116,
+                    "id0": 116
+                },
+                "clean": {
+                    "id1": 70,
+                    "id0": 70
+                }
+            },
+            "fair": {
+                "clean": {
+                    "id3": 36,
+                    "id2": 36,
+                    "id1": 36,
+                    "id0": 36
+                },
+                "early": {
+                    "id3": 46,
+                    "id2": 46,
+                    "id1": 46,
+                    "id0": 46
+                }
+            },
+            "nair": {
+                "late": {
+                    "id2": 105,
+                    "id1": 105,
+                    "id0": 105
+                },
+                "clean": {
+                    "id2": 86,
+                    "id1": 86,
+                    "id0": 86
+                }
+            },
+            "dsmash": {
+                "id3": 43,
+                "id2": 43,
+                "id1": 34,
+                "id0": 34
+            },
+            "usmash": {
+                "id1": 28,
+                "id0": 28
+            },
+            "fsmash": {
+                "id3": 39,
+                "id2": 35,
+                "id1": 30,
+                "id0": 33
+            },
+            "dtilt": {
+                "id2": 172,
+                "id1": 172,
+                "id0": 172
+            },
+            "utilt": {
+                "id2": 43,
+                "id1": 52,
+                "id0": 62
+            },
+            "ftilt": {
+                "ang_down": {
+                    "id3": 104,
+                    "id2": 104,
+                    "id1": 104,
+                    "id0": 104
+                },
+                "ang_side": {
+                    "id3": 93,
+                    "id2": 93,
+                    "id1": 93,
+                    "id0": 93
+                },
+                "ang_up": {
+                    "id3": 84,
+                    "id2": 84,
+                    "id1": 84,
+                    "id0": 84
+                }
+            },
+            "dash": {
+                "late": {
+                    "id1": -1,
+                    "id0": -1
+                },
+                "clean": {
+                    "id1": 5,
+                    "id0": 5
+                }
+            },
+            "jab": {
+                "hit2": {
+                    "id2": 166,
+                    "id1": 166,
+                    "id0": 166
+                },
+                "hit1": {
+                    "id2": -1,
+                    "id1": -1,
+                    "id0": -1
+                }
+            },
+            "downSpecial": {
+                "hit2": {
+                    "id3": 0,
+                    "id2": 0,
+                    "id1": 0,
+                    "id0": 0
+                },
+                "hit1": {
+                    "id3": 0,
+                    "id2": 0,
+                    "id1": 0,
+                    "id0": 0
+                }
+            },
+            "upSpecial": {
+                "air_hits6_8": {
+                    "id2": -1,
+                    "id1": -1,
+                    "id0": -1
+                },
+                "air_hits2_5": {
+                    "id2": -1,
+                    "id1": -1,
+                    "id0": -1
+                },
+                "air_hit1": {
+                    "id1": 82,
+                    "id0": 82
+                },
+                "ground_hits4_5": {
+                    "id2": -1,
+                    "id1": -1,
+                    "id0": -1
+                },
+                "ground_hits2_3": {
+                    "id2": 102,
+                    "id1": 102,
+                    "id0": 102
+                },
+                "ground_hit1": {
+                    "id1": 29,
+                    "id0": 29
+                }
+            },
+            "sideSpecial": {
+                "air": {
+                    "id1": -1,
+                    "id0": -1
+                },
+                "ground": {
+                    "id2": -1,
+                    "id1": -1,
+                    "id0": -1
+                }
+            },
+            "neutralSpecial": {
+                "air_fullcharge_late": {
+                    "id2": 22,
+                    "id1": 22,
+                    "id0": 22
+                },
+                "air_fullcharge_early": {
+                    "id2": 37,
+                    "id1": 37,
+                    "id0": 37
+                },
+                "air_uncharged_late": {
+                    "id1": 88,
+                    "id0": 88
+                },
+                "air_uncharged_early": {
+                    "id1": 72,
+                    "id0": 72
+                },
+                "ground_fullcharge_late": {
+                    "id2": 14,
+                    "id1": 14,
+                    "id0": 14
+                },
+                "ground_fullcharge_early": {
+                    "id2": 30,
+                    "id1": 30,
+                    "id0": 30
+                },
+                "ground_uncharged_clean": {
+                    "id1": 88,
+                    "id0": 88
+                },
+                "ground_uncharged_early": {
+                    "id1": 72,
+                    "id0": 72
+                }
+            }
+        }
+    }
+}
