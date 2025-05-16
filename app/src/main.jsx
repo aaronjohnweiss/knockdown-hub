@@ -1,10 +1,10 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
+import { CssBaseline } from '@mui/material';
 import { BrowserRouter } from "react-router";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import { CssBaseline } from '@mui/material';
+import App from './App.jsx'
+import './index.css';
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
@@ -13,10 +13,17 @@ import '@fontsource/roboto/700.css';
 const theme = createTheme({
   colorSchemes: {
     dark: true,
+  },
+  palette: {
+    mode: 'dark',
+    background: {
+      default: '#00000000'
+    }
   }
 });
+const root = createRoot(document.body);
 
-createRoot(document.getElementById('root')).render(
+root.render(
   <StrictMode>
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -24,5 +31,5 @@ createRoot(document.getElementById('root')).render(
         <App />
       </BrowserRouter>
     </ThemeProvider>
-  </StrictMode>,
-)
+  </StrictMode>
+);
