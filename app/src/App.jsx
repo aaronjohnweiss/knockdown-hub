@@ -1,23 +1,10 @@
-import React from 'react';
-import Idle from './components/Idle';
+import { Routes, Route, Navigate } from "react-router";
+
+import Root from "./routes/Root";
+import PageWrapper from "./components/PageWrapper";
 import { AppBar, Container, Toolbar, Typography, Grid, styled } from '@mui/material';
 
-const StyledMain = styled('main')({
-    '@global': {
-        '*::-webkit-scrollbar': {
-            width: '0.4em'
-        },
-        '*::-webkit-scrollbar-track': {
-            '-webkit-box-shadow': 'inset 0 0 6px rgba(0,0,0,0.00)'
-        },
-        '*::-webkit-scrollbar-thumb': {
-            backgroundColor: 'rgba(0,0,0,.1)',
-            outline: '1px solid slategrey'
-        }
-    }
-});
-
-const Root = () => (
+const App = () => (
     <>
         <AppBar position="fixed" sx={{ maxHeight: '31px', appRegion: 'drag'  }}>
             <Toolbar variant="dense" sx={{ minHeight: '31px', marginLeft: -1.5, display: 'flex', alignItems: 'center', gap: 1 }}>
@@ -30,10 +17,15 @@ const Root = () => (
         <Toolbar variant='dense' sx={{ minHeight: '31px' }} />
         <main style={{ height: 'calc(100% - 31px)' }}>
             <Container maxWidth="md" sx={{ height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' }}>
-                <Idle sx={{ justifySelf: 'center', alignSelf: 'center' }} />
+                <Routes>
+                    <Route path='/' element={<PageWrapper />}>
+                        <Route index element={<Root />} />
+                        <Route path="*" element={<Navigate to="/" replace />} />
+                    </Route>
+                </Routes>
             </Container>
         </main>
     </>
 );
 
-export default Root;
+export default App;
