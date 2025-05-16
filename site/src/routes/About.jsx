@@ -11,7 +11,7 @@ const StlyedBackground = styled(Paper)({
     left: '30%',
     right: '0',
     backgroundPosition: 'center',
-    opacity: '10%',
+    opacity: '15%',
     overflow: 'hidden',
     zIndex: -5
 });

@@ -1,21 +1,30 @@
 import React from 'react';
 import { AppBar, Toolbar, Container, Typography, IconButton, Box, Button, Menu, MenuItem } from '@mui/material';
+import { useColorScheme } from '@mui/material/styles';
 import HomeIcon from '@mui/icons-material/Home';
 import MenuIcon from '@mui/icons-material/Menu';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import SettingsBrightnessIcon from '@mui/icons-material/SettingsBrightness';
 import { Link } from "react-router";
 
 const pages = ['Charts', 'App', 'Data', 'Support'];
 
 
 const CustomAppBar = () => {
+  const { mode, setMode } = useColorScheme();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
+
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
+
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
+
+  const handleColorMode = React.useCallback(() => {
+      mode === 'dark' ? setMode('light') : setMode('dark');
+  }, [mode])
 
 
   return (
@@ -93,6 +102,13 @@ const CustomAppBar = () => {
                 </Box>
                 <Box sx={{ flexGrow: 1 }} />
               </Box>
+              <IconButton
+                aria-label="Theme Settings"
+                color="inherit"
+                onClick={handleColorMode}
+              >
+                <SettingsBrightnessIcon />
+              </IconButton>
               <IconButton
                 aria-label="Project on Github"
                 color="inherit"
