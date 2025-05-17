@@ -1,6 +1,4 @@
-import React from 'react';
-import { Grid, Typography } from '@mui/material';
-import { Link } from 'react-router';
+import { Grid, Typography, Link} from '@mui/material';
 
 export const Support = () => {
     return (
@@ -10,7 +8,7 @@ export const Support = () => {
                     Please consider supporting those in the community who make tools like this possible:
                 </Typography>
                 <Typography variant='h2' fontSize='1.5em' paddingTop={1}>
-                    Fizzi / Slippi
+                    Slippi
                 </Typography>
                 <Typography>
                     <ul>
@@ -22,7 +20,7 @@ export const Support = () => {
                     </ul>
                 </Typography>
                 <Typography paddingBottom={2}>
-                    Thank you to the <Link to='https://github.com/project-slippi/slippi-js' target='_blank' rel='noreferrer noopener'>
+                    An additional thanks to the <Link to='https://github.com/project-slippi/slippi-js' target='_blank' rel='noreferrer noopener'>
                         slippi-js
                     </Link> project contributors to help enable the real-time app features.
                 </Typography>

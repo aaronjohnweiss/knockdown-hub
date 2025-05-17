@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 import { CssBaseline } from '@mui/material';
 import { BrowserRouter } from "react-router";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { lightBlue } from '@mui/material/colors'
 import App from './App.jsx'
 import './index.css';
 import '@fontsource/roboto/300.css';
@@ -17,7 +18,7 @@ const theme = createTheme({
   palette: {
     mode: 'dark',
     background: {
-      default: '#00000000'
+      default: '#00021900'
     }
   }
 });

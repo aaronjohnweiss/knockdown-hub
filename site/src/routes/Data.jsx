@@ -1,5 +1,4 @@
-import { Grid, Typography } from '@mui/material';
-import { Link } from 'react-router';
+import { Grid, Typography, Link } from '@mui/material';
 import { FalconKnockdownTable } from '../components/data/FalconKnockdownTable'
 
 export const Data = () => {

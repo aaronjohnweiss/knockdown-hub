@@ -1,5 +1,4 @@
-import { Grid, Paper, Typography, styled } from '@mui/material';
-import { Link } from 'react-router';
+import { Grid, Paper, Typography, styled, Link } from '@mui/material';
 
 const StlyedBackground = styled(Paper)({
     position: 'absolute',

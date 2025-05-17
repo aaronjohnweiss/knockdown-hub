@@ -1,11 +1,15 @@
 import React from 'react';
 import { Box } from '@mui/material';
 import { Outlet } from 'react-router';
-
+import Slide from '@mui/material/Slide';
 
 export const PageWrapper = () => {
     return (
-        <Outlet />
+        <>
+            <Slide direction="left" >
+                <Outlet />
+            </Slide>
+        </>
     )
 }
 
