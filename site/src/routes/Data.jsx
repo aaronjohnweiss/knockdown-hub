@@ -21,7 +21,7 @@ export const Data = () => {
                     <li>Record the attacker, victim, attack, subattack, hitbox, and percentage</li>
                 </Typography>
                 <Typography>
-                    This process outputs a set of raw data that can be found in the <Link to='https://github.com/aaronjohnweiss/knockdown-hub' target='_blank' rel='noreferrer noopener'>Knockdown-Hub</Link> repository. With 26 characters, each having 26 unique match-ups, the operation produced approximately 140,000 lines of data!
+                    This process outputs a set of raw data that can be found in the <Link to='https://github.com/aaronjohnweiss/know-your-percents' target='_blank' rel='noreferrer noopener'>know-your-percents</Link> repository. With 26 characters, each having 26 unique match-ups, the operation produced approximately 140,000 lines of data!
                 </Typography>
             </Grid>
             <Grid size={{ xs: 12 }}>
@@ -65,7 +65,7 @@ export const Data = () => {
                         Let's fix this!
                     </Typography>
                     <Typography>
-                        Outside of purposing a new algorithm for the raw data parser, I'd like to ask the community to provide <Link to='https://github.com/aaronjohnweiss/knockdown-hub/issues/new' target='_blank' rel='noreferrer noopener'>feature enhancement requests</Link> if cases such as the above are found in the dataset. When doing so, please include the following points:
+                        Outside of purposing a new algorithm for the raw data parser, I'd like to ask the community to provide <Link to='https://github.com/aaronjohnweiss/know-your-percents/issues/new' target='_blank' rel='noreferrer noopener'>feature enhancement requests</Link> if cases such as the above are found in the dataset. When doing so, please include the following points:
                     </Typography>
                     <Typography component='ul'>
                         <li>The Character</li>

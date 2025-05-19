@@ -113,7 +113,7 @@ const CustomAppBar = () => {
                 aria-label="Project on Github"
                 color="inherit"
                 component={Link}
-                to={`https://github.com/aaronjohnweiss/knockdown-hub`}
+                to={`https://github.com/aaronjohnweiss/know-your-percents`}
                 target='_blank'
               >
                 <GitHubIcon />

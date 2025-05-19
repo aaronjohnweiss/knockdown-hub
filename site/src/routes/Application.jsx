@@ -22,7 +22,7 @@ export const App = () => {
                     Download
                 </Typography>
                 <Typography>
-                    Visit the project's <Link to='https://github.com/aaronjohnweiss/knockdown-hub/releases' target='_blank' rel='noreferrer noopener'>
+                    Visit the project's <Link to='https://github.com/aaronjohnweiss/know-your-percents/releases' target='_blank' rel='noreferrer noopener'>
                         Github Releases
                     </Link> page to download the app!
                 </Typography>

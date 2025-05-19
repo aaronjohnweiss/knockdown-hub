@@ -15,6 +15,7 @@ if (started) {
 const store = new Store({
   configName: 'user-data',
   defaults: {
+    version: '1.0.2',
     window: {
       width: 800,
       height: 600
@@ -29,11 +30,32 @@ const store = new Store({
   }
 });
 
+const handleConfigMigration = () => {
+  const tempStore = store.getStore();
+  switch (tempStore.version) {
+    case '1.0.0':
+      tempStore.percentThresholdHighliting = true
+      tempStore.version = '1.0.1'
+      store.setStore(tempStore)
+      break;
+    case '1.0.1':
+      delete tempStore.percentThresholdHighliting
+      tempStore.version = '1.0.2'
+      store.setStore(tempStore)
+    default:
+      // no more migrations to perform
+      return;
+  }
+  // re-check if more migration is necessary
+  handleConfigMigration();
+}
+
 const watchDirectory = async (directory, tag) => {
   watcher = startFileWatcher(directory, tag, mainWindow);
 };
 
 const createWindow = () => {
+  handleConfigMigration();
   let [width, height] = [800, 600];
   try {
     width = store.get('window').width;
@@ -96,6 +118,7 @@ app.whenReady().then(() => {
 
   mainWindow.once('ready-to-show', () => {
     mainWindow.show()
+    console.log('Running config version ', store.get('version'))
     // mainWindow.setVisibleOnAllWorkspaces(true, { visibleOnFullScreen: true });
     // mainWindow.setAlwaysOnTop(true, 'screen-saver', 1);
     // mainWindow.setFullScreenable(false);
