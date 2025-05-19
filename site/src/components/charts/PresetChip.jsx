@@ -12,7 +12,7 @@ export const PresetChip = ({ presetName, currentMoves=[], preset=[], handleActio
 
     const handlePresetClick = React.useCallback(() => {
         handleAction(preset, shouldAdd);
-    }, [handleAction, shouldAdd]);
+    }, [handleAction, shouldAdd, preset]);
     return (
         <Chip 
             label={presetName}

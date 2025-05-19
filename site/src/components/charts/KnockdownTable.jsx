@@ -1,10 +1,8 @@
 import React from 'react';
 import { 
-    Box, 
-    IconButton, 
     Paper, 
     Tooltip, 
-    Divider, 
+    TableSortLabel, 
     Typography, 
     Table,
     TableBody,
@@ -13,9 +11,34 @@ import {
     TableHead,
     TableRow
 } from '@mui/material';
-import HelpIcon from '@mui/icons-material/Help';
 
 export const KnockdownTable = ({ rows }) => {
+    const [sortByCc, setSortByCc] = React.useState(false);
+    const [sortAsc, setSortAsc] = React.useState(true);
+
+    const sortedRows = React.useMemo(() => {
+      const sortField = `${sortByCc ? 'cc' : 'asdi'}`;
+      return rows.sort((a, b) => sortAsc ? a[sortField] - b[sortField] : -(a[sortField] - b[sortField]))
+    }, [rows, sortAsc, sortByCc]);
+
+    const handleSort = React.useCallback((sortLabel) => {
+      if (sortLabel === 'cc') {
+        if (sortByCc) {
+          setSortAsc(!sortAsc);
+        } else {
+          setSortAsc(true);
+          setSortByCc(!sortByCc)
+        }
+      } else {
+        if (!sortByCc) {
+          setSortAsc(!sortAsc);
+        } else {
+          setSortAsc(true);
+          setSortByCc(!sortByCc)
+        }
+      }
+    }, [sortByCc, sortAsc]);
+
     return (
     <TableContainer component={Paper}>
       <Table sx={{ maxHeight: '600px', overflow: 'auto' }} size="small" aria-label="Knockdown Table">
@@ -31,20 +54,30 @@ export const KnockdownTable = ({ rows }) => {
         <TableHead>
           <TableRow>
             <TableCell>Move</TableCell>
-            <TableCell align="right">
+            <TableCell align="right" sortDirection={sortAsc ? 'asc' : 'desc'}>
                 <Tooltip title='The earliest percentage at which the recipient will be knocked down'>
-                    ASDI % 
+                  <TableSortLabel 
+                    direction={sortByCc ? 'asc' : sortAsc ? 'asc' : 'desc'}
+                    onClick={() => handleSort('asdi')}
+                  >
+                    ASDI %
+                  </TableSortLabel>
                 </Tooltip>
             </TableCell>
             <TableCell align="right">
                 <Tooltip title='The percentage at which the recipient will be knocked down while crouching'>
-                    CC % 
+                    <TableSortLabel 
+                      direction={!sortByCc ? 'asc' : sortAsc ? 'asc' : 'desc'}
+                      onClick={() => handleSort('cc')}
+                    >
+                      CC %
+                  </TableSortLabel>
                 </Tooltip>
             </TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
+          {sortedRows.map((row) => (
             <TableRow
               key={row.move}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}

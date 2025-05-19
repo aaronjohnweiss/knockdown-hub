@@ -4,18 +4,14 @@ import {
     IconButton, 
     Paper, 
     Tooltip, 
-    Divider, 
     Typography, 
     Grid,
-    Table,
-    TableBody,
-    TableCell,
-    TableContainer,
-    TableHead,
-    TableRow
+    Fade
 } from '@mui/material';
 import { CharacterSelector } from './CharacterSelector';
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
+import SwapHorizIcon from '@mui/icons-material/SwapHoriz';
+import { aerials, throws, misc, specials, moveset_list } from '../../../../shared/moveset_list';
 import knockdown_data from '../../../../shared/knockdown_data.json';
 import cc_knockdown_data from '../../../../shared/cc_knockdown_data.json';
 import MovesetFilter from './MovesetFilter';
@@ -26,12 +22,14 @@ export const Knockdowns = () => {
     const [offenderId, setOffenderId] = React.useState(0);
     const [recipientId, setRecipientId] = React.useState(0);
     const [allowedMoves, setAllowedMoves] = React.useState([]);
-
+    const [characterSwapHover, setCharacterSwapHover] = React.useState(false);
 
     const handleSwap = React.useCallback(() => {
+        setCharacterSwapHover(false)
         const newOffender = offenderId;
         setOffenderId(recipientId);
         setRecipientId(newOffender);
+        setCharacterSwapHover(false)
     }, [offenderId, recipientId]);
 
     const handlePresetClick = React.useCallback((preset, add) => {
@@ -66,6 +64,13 @@ export const Knockdowns = () => {
         [recipientId, knockdowns, allowedMoves]
     );
 
+    const presets = React.useMemo(() => ({
+        aerials: Object.keys(knockdowns.asdi).filter(item => aerials.includes(item)),
+        specials: Object.keys(knockdowns.asdi).filter(item => specials.includes(item)),
+        throws: Object.keys(knockdowns.asdi).filter(item => throws.includes(item)),
+        misc: Object.keys(knockdowns.asdi).filter(item => misc.includes(item))
+    }), [knockdowns])
+
 
     return (
         <Grid container spacing={2} >
@@ -77,8 +82,14 @@ export const Knockdowns = () => {
                     <Paper elevation={2} sx={{ display: 'flex', flexShrink: 1, gap: 2, padding: 1 }}>
                         <CharacterSelector title='Offender' characterId={offenderId} selectCharacter={(id) => setOffenderId(id)} />
                         <Tooltip title='Swap Characters'>
-                            <IconButton onClick={handleSwap}>
-                                <KeyboardDoubleArrowRightIcon />
+                            <IconButton 
+                                onClick={handleSwap}
+                                onMouseEnter={() => setCharacterSwapHover(true)} 
+                                onFocus={() => setCharacterSwapHover(true)}
+                                onMouseLeave={() => setCharacterSwapHover(false)}
+                                onBlur={() => setCharacterSwapHover(false)}
+                            >
+                                {characterSwapHover ? <SwapHorizIcon /> : <Fade in><KeyboardDoubleArrowRightIcon /></Fade>}
                             </IconButton>
                         </Tooltip>
                         <CharacterSelector title='Recipient' characterId={recipientId} selectCharacter={(id) => setRecipientId(id)} />
@@ -95,7 +106,7 @@ export const Knockdowns = () => {
                     <PresetChip 
                         presetName='Aerials' 
                         currentMoves={allowedMoves}  
-                        preset={['upair', 'fair', 'bair', 'dair', 'nair', 'zair']}
+                        preset={presets.aerials}
                         handleAction={handlePresetClick}
                     />
                     <PresetChip 
@@ -113,13 +124,19 @@ export const Knockdowns = () => {
                     <PresetChip 
                         presetName='Specials' 
                         currentMoves={allowedMoves}  
-                        preset={['upSpecial', 'neutralSpecial', 'sideSpecial', 'downSpecial']}
+                        preset={presets.specials}
                         handleAction={handlePresetClick}
                     />
                     <PresetChip 
                         presetName='Throws' 
                         currentMoves={allowedMoves}  
-                        preset={['uthrow', 'dthrow', 'fthrow', 'bthrow']}
+                        preset={presets.throws}
+                        handleAction={handlePresetClick}
+                    />
+                    <PresetChip 
+                        presetName='Misc' 
+                        currentMoves={allowedMoves}  
+                        preset={presets.misc}
                         handleAction={handlePresetClick}
                     />
                     <PresetChip 
@@ -127,7 +144,13 @@ export const Knockdowns = () => {
                         currentMoves={allowedMoves}  
                         preset={Object.keys(knockdowns.asdi)}
                         handleAction={handlePresetClick}
-                    />            
+                    />   
+                    <PresetChip 
+                        presetName="All"
+                        currentMoves={allowedMoves}  
+                        preset={moveset_list}
+                        handleAction={handlePresetClick}
+                    />                 
                 </Box>
             </Grid>
             <Grid size={{ xs: 12, sm: 5 }} gap={1}>
@@ -135,7 +158,6 @@ export const Knockdowns = () => {
                     Knockdowns
                 </Typography>
                 <KnockdownTable rows={tableRows} />
-                
             </Grid>
         </Grid>
     )
