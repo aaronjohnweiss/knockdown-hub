@@ -13,7 +13,7 @@ function App() {
   return (
     <>
       <AppBar />
-      <Container maxWidth="md" sx={{ height: 'calc(100% - 56px)', display: 'flex', alignItems: 'flex-start', flexDirection: 'column' }}>
+      <Container component='main' maxWidth="md" sx={{ height: 'calc(100% - 56px)', display: 'flex', alignItems: 'flex-start', flexDirection: 'column' }}>
         <Routes>
           <Route path='/' element={<PageWrapper />}>
             <Route index element={<About />} />

@@ -20,6 +20,9 @@ export const Home = () => {
         <Grid container spacing={2}>
             <StlyedBackground />
         <Grid size={{ xs: 12 }}>
+            <Typography>
+                Welcome to KnowYourPercents! A specialized site and companion app for learning Knockdown percentages in Super Smash Bros. Melee.
+            </Typography>
             <Typography variant='h2' fontSize='1.5em' paddingY={1}>
                 What is Knockdown?
             </Typography>

@@ -6,7 +6,6 @@ import {
     IconButton, 
     Paper, 
     Tooltip, 
-    Divider, 
     Typography, 
     Table,
     TableBody,
@@ -34,8 +33,8 @@ export const FalconKnockdownTable = () => {
         <TableHead>
           <TableRow>
             <TableCell></TableCell>
-            {columns.map((id) => (
-                <TableCell>
+            {columns.map((id, idx) => (
+                <TableCell key={`column-${id}-${idx}`}>
                     <Tooltip title={characters[id].name} placement='top'>
                         <IconButton>
                             <img alt={characters[id].name} src={`./assets/icons/${id}-Default.png`} />
@@ -46,16 +45,21 @@ export const FalconKnockdownTable = () => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((move) => (
+          {rows.map((move, idx) => (
             <TableRow
-              key={move}
+              key={`row-${move}-${idx}`}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
                 <TableCell component="th" scope="row">
                     {move}
                 </TableCell>
                 {columns.map((id) => (
-                    <TableCell align='center'>{knockdown_data[0][move][id]}</TableCell>
+                    <TableCell 
+                      key={`cell-${move}-${id}`} 
+                      align='center'
+                    >
+                      {knockdown_data[0][move][id]}
+                    </TableCell>
                 ))}
             </TableRow>
           ))}

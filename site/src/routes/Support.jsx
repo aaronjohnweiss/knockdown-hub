@@ -10,7 +10,6 @@ export const Support = () => {
                 <Typography variant='h2' fontSize='1.5em' paddingTop={1}>
                     Slippi
                 </Typography>
-                <Typography>
                     <ul>
                         <li>
                         <Link to='https://slippi.gg/support' target='_blank' rel='noreferrer noopener'>
@@ -18,7 +17,6 @@ export const Support = () => {
                         </Link>
                         </li>
                     </ul>
-                </Typography>
                 <Typography paddingBottom={2}>
                     An additional thanks to the <Link to='https://github.com/project-slippi/slippi-js' target='_blank' rel='noreferrer noopener'>
                         slippi-js
@@ -29,7 +27,6 @@ export const Support = () => {
                 <Typography variant='h2' fontSize='1.5em'>
                     IKneeData
                 </Typography>
-                <Typography>
                      <ul>
                         <li>
                             <Link to='https://ikneedata.com/donate.html' target='_blank' rel='noreferrer noopener'>
@@ -37,7 +34,6 @@ export const Support = () => {
                             </Link>
                         </li>
                     </ul>
-                </Typography>
             </Grid>
         </Grid>
     )

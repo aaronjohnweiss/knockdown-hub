@@ -53,7 +53,7 @@ export const KnockdownTable = ({ rows }) => {
                 {row.move}
               </TableCell>
               <TableCell align="right">{row.asdi}</TableCell>
-              <TableCell align="right">{row.cc}</TableCell>
+              <TableCell align="right">{row.cc === -1 ? 'N/A' : row.cc}</TableCell>
             </TableRow>
           ))}
         </TableBody>

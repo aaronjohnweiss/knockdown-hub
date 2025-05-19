@@ -12,10 +12,12 @@ export const App = () => {
                     <br />
                     <br />
                     Once playing, the app will automatically:
+                </Typography>
                     <ul>
                         <li>Adjust the charts to the current matchup</li>
                         <li>Highlight percent thresholds as percents change</li>
                     </ul>
+                <Typography>
                     Want to practice your defensive game? Switch characters to see your opponent's knockdown windows against you:
                 </Typography>
                 <Typography variant='h2' fontSize='1.5em' paddingBottom={1} paddingTop={3}>
