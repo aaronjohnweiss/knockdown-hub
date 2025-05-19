@@ -17,6 +17,7 @@ import KnockdownTable from './KnockdownTable';
 
 export const RealtimeKnockdowns = ({ offender, recipient, handleSwap, allowedMoves, playerPercents }) => {
 
+    const [useCcPercents, setUseCcPercents] = React.useState(window.electronAPI.getCcToggleState());
     const condenseView = useMediaQuery('(max-width: 320px)');
     const knockdowns = React.useMemo(() => {
         return ({
@@ -33,14 +34,20 @@ export const RealtimeKnockdowns = ({ offender, recipient, handleSwap, allowedMov
         [recipient, knockdowns, allowedMoves]
     );
 
+    React.useEffect(() => {
+        window.electronAPI.onCcToggleUpdate(({ ccToggleState }) => {
+            console.log('setting toggle to ', ccToggleState)
+            setUseCcPercents(ccToggleState)
+        });
+    }, []);
+
     return (
         <Grid container spacing={2} >
             <Grid size={{ xs: 12 }}>
-
                 <Box display='flex' flexDirection='row' justifyContent='center'>
                     <Paper elevation={5} sx={{ display: 'flex', flexShrink: 1, gap: 0.5, padding: 1, alignItems: 'center' }}>
                         <Typography variant='h2' component='p' fontSize='1.75em' minWidth='75px' textAlign='left' sx={{ display: condenseView ? 'none' : 'inherit' }}>
-                            {playerPercents[offender.playerIndex]}%
+                            {Math.round(playerPercents[offender.playerIndex])}%
                         </Typography>
                         <IconButton>
                             <img src={`./assets/icons/${offender.characterId}-${characters[offender.characterId].colors[offender.characterColor]}.png`} />
@@ -54,13 +61,13 @@ export const RealtimeKnockdowns = ({ offender, recipient, handleSwap, allowedMov
                             <img src={`./assets/icons/${recipient.characterId}-${characters[recipient.characterId].colors[recipient.characterColor]}.png`} />
                         </IconButton>
                         <Typography variant='h2' component='p' fontSize='1.75em' minWidth='75px' textAlign='right'>
-                            {playerPercents[recipient.playerIndex]}%
+                            {Math.round(playerPercents[recipient.playerIndex])}%
                         </Typography>
                     </Paper>
                 </Box>
             </Grid>
             <Grid size={{ xs: 12 }}>
-                <KnockdownTable rows={tableRows} recipientPercent={playerPercents[recipient.playerIndex]} />
+                <KnockdownTable rows={tableRows} recipientPercent={playerPercents[recipient.playerIndex]} useCcPercents={useCcPercents} />
             </Grid>
         </Grid>
     )

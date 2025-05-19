@@ -1,13 +1,12 @@
 import { Routes, Route, Navigate } from "react-router";
 
 import Root from "./routes/Root";
-import Configure from "./components/Configure";
 import PageWrapper from "./components/PageWrapper";
 import { AppBar, Container, Toolbar, Typography, IconButton, Badge } from '@mui/material';
-import SettingsIcon from '@mui/icons-material/Settings';
 import Background from "./components/Background";
 
-const App = () => (
+const App = () => {
+    return (
     <>
         <AppBar position="fixed" sx={{ maxHeight: '31px', appRegion: 'drag', zIndex: (theme) => theme.zIndex.drawer + 1  }}>
             <Toolbar variant="dense" sx={{ minHeight: '31px', marginLeft: -1.5, display: 'flex', alignItems: 'center', gap: 1 }}>
@@ -18,8 +17,8 @@ const App = () => (
             </Toolbar>
         </AppBar>
         <Toolbar variant='dense' sx={{ minHeight: '31px' }} />
-        <main style={{ height: 'calc(100% - 31px)' }}>
-            <Container maxWidth="md" sx={{ height: '100%', display: 'flex', alignItems: 'stretch', justifyContent: 'center', flexDirection: 'column' }}>
+        <main style={{ height: 'calc(100% - 31px)', display: 'flex', alignItems: 'stretch' }}>
+            <Container maxWidth="md" sx={{ display: 'flex', alignItems: 'stretch', justifyContent: 'center', flexDirection: 'column', flex: '1' }}>
                 <Routes>
                     <Route path='/' element={<PageWrapper />}>
                         <Route index element={<Root />} />
@@ -30,6 +29,6 @@ const App = () => (
             <Background />
         </main>
     </>
-);
+)};
 
 export default App;

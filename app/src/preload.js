@@ -3,15 +3,18 @@
 const { contextBridge, ipcRenderer } = require('electron/renderer')
 
 contextBridge.exposeInMainWorld('electronAPI', {
+    // renderer -> backend
     openDirectory: () => ipcRenderer.invoke('dialog:openDirectory'),
-    getSlippiData: () => ipcRenderer.invoke('user-data:getSlippiData'),
     setSlippiData: (data) => ipcRenderer.send('user-data:setSlippiData', data),
-    getFilterData: () => ipcRenderer.invoke('user-data:getFilterData'),
     setFilterData: (data) => ipcRenderer.send('user-data:setFilterData', data),
+    setCcToggleState: (data) => ipcRenderer.send('user-data:setCcToggleState', data),
+
+    // backend -> renderer
+    getCcToggleState: () => ipcRenderer.invoke('user-data:getCcToggleState'),
+    onCcToggleUpdate: (callback) => ipcRenderer.on('user-data:ccToggleUpdate', (_event, value) => callback(value)),
+    getSlippiData: () => ipcRenderer.invoke('user-data:getSlippiData'),
+    getFilterData: () => ipcRenderer.invoke('user-data:getFilterData'),
     onNewGame: (callback) => ipcRenderer.on('new-game', (_event, value) => callback(value)),
     onPlayerPercentChange: (callback) => ipcRenderer.on('player-percents', (_event, value) => callback(value)),
-    onUpdateFilters: (callback) => ipcRenderer.on('update-filters', (_event, value) => callback(value)),
-    onMinimize: () => ipcRenderer.send('window:minimize'),
-    onCloakUpdate: (callback) => ipcRenderer.on('window:updateCloak', (_event, value) => callback(value)),
-    toggleCloak: () => ipcRenderer.send('window:cloak'),
+    onUpdateFilters: (callback) => ipcRenderer.on('update-filters', (_event, value) => callback(value))
 });
