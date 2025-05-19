@@ -19,7 +19,6 @@ const store = new Store({
       width: 800,
       height: 600
     },
-    useCcPercents: false,
     filters: {
       moveset: []
     },
@@ -81,8 +80,6 @@ app.whenReady().then(() => {
   ipcMain.on('user-data:setSlippiData', (_, val) => setSlippiDataIntoAppData(val))
   ipcMain.handle('user-data:getFilterData', getFilterData)
   ipcMain.on('user-data:setFilterData', (_, val) => setFilterData(val))
-  ipcMain.handle('user-data:getCcToggleState', getCcToggleState)
-  ipcMain.on('user-data:setCcToggleState', (_, val) => setCcToggleState(val))
 
   createWindow();
 
@@ -157,13 +154,4 @@ const getFilterData = async () => {
 const setFilterData = ({ moveset=[] }) => {
   mainWindow.webContents.send('update-filters', { moveset });
   return store.set('filters', { moveset });
-}
-
-const getCcToggleState = async () => {
-  return await store.get('useCcPercents');
-}
-
-const setCcToggleState = ({ ccToggleState }) => {
-  mainWindow.webContents.send('user-data:ccToggleUpdate', { ccToggleState });
-  return store.set('useCcPercents', ccToggleState);
 }

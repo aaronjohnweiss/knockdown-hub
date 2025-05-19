@@ -6,9 +6,11 @@ import {
     Tooltip, 
     useMediaQuery, 
     Typography, 
-    Grid
+    Grid,
+    Fade
 } from '@mui/material';
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
+import SwapHorizIcon from '@mui/icons-material/SwapHoriz';
 import knockdown_data from '../../../shared/knockdown_data.json';
 import cc_knockdown_data from '../../../shared/cc_knockdown_data.json';
 import characters from '../../../shared/characters.json';
@@ -17,7 +19,9 @@ import KnockdownTable from './KnockdownTable';
 
 export const RealtimeKnockdowns = ({ offender, recipient, handleSwap, allowedMoves, playerPercents }) => {
 
-    const [useCcPercents, setUseCcPercents] = React.useState(window.electronAPI.getCcToggleState());
+    const [characterSwapHover, setCharacterSwapHover] = React.useState(false);
+
+    const [useCcPercents, setUseCcPercents] = React.useState(false);
     const condenseView = useMediaQuery('(max-width: 320px)');
     const knockdowns = React.useMemo(() => {
         return ({
@@ -27,19 +31,34 @@ export const RealtimeKnockdowns = ({ offender, recipient, handleSwap, allowedMov
     }, [offender]);
 
     const tableRows = React.useMemo(() => Object.keys(knockdowns.asdi)
-        .filter(move => knockdowns.asdi[move][recipient.characterId] > -1)
+        .filter(move => {
+            knockdowns.asdi[move][recipient.characterId] > -1
+            if (useCcPercents) {
+                return knockdowns.cc[move][recipient.characterId] > -1
+            } else {
+                return knockdowns.asdi[move][recipient.characterId] > -1
+            }
+        })
         .filter(move => allowedMoves.includes(move))
-        .sort((a, b) => knockdowns.asdi[a][recipient.characterId] - knockdowns.asdi[b][recipient.characterId])
+        .sort((a, b) => {
+            if (useCcPercents) {
+                return knockdowns.cc[a][recipient.characterId] - knockdowns.cc[b][recipient.characterId]
+            } else {
+                return knockdowns.asdi[a][recipient.characterId] - knockdowns.asdi[b][recipient.characterId]
+            }
+            
+        })
         .map(move => ({ move, asdi: knockdowns.asdi[move][recipient.characterId], cc: knockdowns.cc[move][recipient.characterId] })),
-        [recipient, knockdowns, allowedMoves]
+        [recipient, knockdowns, allowedMoves, useCcPercents]
     );
 
-    React.useEffect(() => {
-        window.electronAPI.onCcToggleUpdate(({ ccToggleState }) => {
-            console.log('setting toggle to ', ccToggleState)
-            setUseCcPercents(ccToggleState)
-        });
-    }, []);
+    const handleSwitch = React.useCallback(() => {
+        setCharacterSwapHover(false)
+        handleSwap()
+        setCharacterSwapHover(false)
+    }, [handleSwap]);
+
+    const handleCcToggle = React.useCallback(() => setUseCcPercents(!useCcPercents), [useCcPercents]);
 
     return (
         <Grid container spacing={2} >
@@ -53,8 +72,14 @@ export const RealtimeKnockdowns = ({ offender, recipient, handleSwap, allowedMov
                             <img src={`./assets/icons/${offender.characterId}-${characters[offender.characterId].colors[offender.characterColor]}.png`} />
                         </IconButton>
                         <Tooltip title='Swap Characters'>
-                            <IconButton onClick={handleSwap}>
-                                <KeyboardDoubleArrowRightIcon />
+                            <IconButton 
+                                onClick={handleSwitch}
+                                onMouseEnter={() => setCharacterSwapHover(true)} 
+                                onFocus={() => setCharacterSwapHover(true)}
+                                onMouseLeave={() => setCharacterSwapHover(false)}
+                                onBlur={() => setCharacterSwapHover(false)}
+                            >
+                                {characterSwapHover ? <SwapHorizIcon /> : <Fade in><KeyboardDoubleArrowRightIcon /></Fade>}
                             </IconButton>
                         </Tooltip>
                         <IconButton>
@@ -67,7 +92,12 @@ export const RealtimeKnockdowns = ({ offender, recipient, handleSwap, allowedMov
                 </Box>
             </Grid>
             <Grid size={{ xs: 12 }}>
-                <KnockdownTable rows={tableRows} recipientPercent={playerPercents[recipient.playerIndex]} useCcPercents={useCcPercents} />
+                <KnockdownTable 
+                    rows={tableRows} 
+                    recipientPercent={playerPercents[recipient.playerIndex]} 
+                    useCcPercents={useCcPercents} 
+                    toggleUseCcPercents={handleCcToggle}
+                />
             </Grid>
         </Grid>
     )

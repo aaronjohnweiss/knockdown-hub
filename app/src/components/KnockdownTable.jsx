@@ -1,10 +1,8 @@
 import React from 'react';
 import {
-  Chip,
   IconButton,
   Paper,
   Tooltip,
-  Divider,
   Typography,
   Table,
   TableBody,
@@ -12,10 +10,10 @@ import {
   TableContainer,
   TableHead,
   TableRow,
-  alpha
 } from '@mui/material';
+import SwapHorizontalCircleIcon from '@mui/icons-material/SwapHorizontalCircle';
 
-export const KnockdownTable = ({ rows, recipientPercent = 0, useCcPercents=false }) => {
+export const KnockdownTable = ({ rows, recipientPercent = 0, useCcPercents=false, toggleUseCcPercents }) => {
 
   const getTableRowColor = React.useCallback((theme, row, percent) => {
     let color = 'inherit';
@@ -31,7 +29,7 @@ export const KnockdownTable = ({ rows, recipientPercent = 0, useCcPercents=false
     }
 
     return color;
-  }, []);
+  }, [useCcPercents]);
   return (
     <TableContainer component={Paper} elevation={5}>
       <Table sx={{ maxHeight: '600px', overflow: 'auto' }} size="small" aria-label="Knockdown Table">
@@ -47,19 +45,23 @@ export const KnockdownTable = ({ rows, recipientPercent = 0, useCcPercents=false
         <TableHead>
           <TableRow>
             <TableCell>Move</TableCell>
-            {useCcPercents ? (
               <TableCell align="right">
-                <Tooltip title='The percentage at which the recipient will be knocked down even while crouching'>
-                  CC %
+                <Tooltip title='Switch displayed knockdown values' sx={{ marginRight: 1 }}  >
+                  <IconButton size='small' onClick={toggleUseCcPercents}>
+                    <SwapHorizontalCircleIcon />
+                  </IconButton>
                 </Tooltip>
+              {useCcPercents ? (
+                  <Tooltip title='The percentage at which the recipient will be knocked down even while crouching'>
+                    CC %
+                  </Tooltip>
+              ) : (
+                  <Tooltip title='The earliest percentage at which the recipient could be knocked down (no CC)'>
+                    ASDI %
+                  </Tooltip>
+              )}
               </TableCell>
-            ) : (
-              <TableCell align="right">
-                <Tooltip title='The earliest percentage at which the recipient could be knocked down (no CC)'>
-                  ASDI %
-                </Tooltip>
-              </TableCell>
-            )}
+
           </TableRow>
         </TableHead>
         <TableBody>

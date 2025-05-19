@@ -11,7 +11,6 @@ const Configure = ({ open, onClose, onFulfilled, allowedMoves, setAllowedMoves }
 
     const [tag, setTag] = React.useState('');
     const [replayDirectory, setReplayDirectory] = React.useState('');
-    const [ccToggleState, setCcToggleState] = React.useState(false);
 
     const folderBrowse = React.useCallback(async () => {
         const fileDirectory = await window.electronAPI.openDirectory()
@@ -23,19 +22,15 @@ const Configure = ({ open, onClose, onFulfilled, allowedMoves, setAllowedMoves }
     const handleSave = React.useCallback(async () => {
         await window.electronAPI.setSlippiData({ tag, replayDirectory })
         await window.electronAPI.setFilterData({ moveset: allowedMoves })
-        await window.electronAPI.setCcToggleState({ ccToggleState })
-    }, [tag, replayDirectory, allowedMoves, ccToggleState]);
+    }, [tag, replayDirectory, allowedMoves]);
 
     React.useEffect(() => {
         const asyncFetch = async () => {
             const { tag, replayDirectory } = await window.electronAPI.getSlippiData();
             const { moveset } = await window.electronAPI.getFilterData();
-            const useCcPercents = await window.electronAPI.getCcToggleState();
-            console.log('fetched', useCcPercents)
             setTag(tag)
             setReplayDirectory(replayDirectory)
             setAllowedMoves(moveset)
-            setCcToggleState(useCcPercents)
         };
         asyncFetch();
     }, []);
@@ -166,12 +161,6 @@ const Configure = ({ open, onClose, onFulfilled, allowedMoves, setAllowedMoves }
                         handleAction={handlePresetClick}
                     />            
                 </Box>
-                <FormControlLabel 
-                    control={<Switch checked={ccToggleState} 
-                    onChange={() => setCcToggleState(!ccToggleState)} />} 
-                    label="Use CC Percents" 
-                    labelPlacement='start'
-                />
                 <Button onClick={handleClose} sx={{ alignSelf: 'flex-end' }}>Save</Button>
             </Box>
         </Drawer>

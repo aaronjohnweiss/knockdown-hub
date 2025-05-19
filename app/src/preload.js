@@ -7,11 +7,8 @@ contextBridge.exposeInMainWorld('electronAPI', {
     openDirectory: () => ipcRenderer.invoke('dialog:openDirectory'),
     setSlippiData: (data) => ipcRenderer.send('user-data:setSlippiData', data),
     setFilterData: (data) => ipcRenderer.send('user-data:setFilterData', data),
-    setCcToggleState: (data) => ipcRenderer.send('user-data:setCcToggleState', data),
 
     // backend -> renderer
-    getCcToggleState: () => ipcRenderer.invoke('user-data:getCcToggleState'),
-    onCcToggleUpdate: (callback) => ipcRenderer.on('user-data:ccToggleUpdate', (_event, value) => callback(value)),
     getSlippiData: () => ipcRenderer.invoke('user-data:getSlippiData'),
     getFilterData: () => ipcRenderer.invoke('user-data:getFilterData'),
     onNewGame: (callback) => ipcRenderer.on('new-game', (_event, value) => callback(value)),
