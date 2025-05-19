@@ -9,6 +9,7 @@ contextBridge.exposeInMainWorld('electronAPI', {
     setFilterData: (data) => ipcRenderer.send('user-data:setFilterData', data),
 
     // backend -> renderer
+    isProduction: () => ipcRenderer.invoke('app:is-production'),
     getSlippiData: () => ipcRenderer.invoke('user-data:getSlippiData'),
     getFilterData: () => ipcRenderer.invoke('user-data:getFilterData'),
     onNewGame: (callback) => ipcRenderer.on('new-game', (_event, value) => callback(value)),

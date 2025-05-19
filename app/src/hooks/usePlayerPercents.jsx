@@ -6,11 +6,18 @@ export const usePlayerPercents = () => {
     React.useEffect(() => {
         window.electronAPI.onPlayerPercentChange((percent) => setPlayerPercents(percent));
 
-        // mock data lmao
-        setPlayerPercents({
-            0: 114,
-            1: 28
-        })
+        const useMockDataIfDevelop = async () => {
+            const isProduction = await window.electronAPI.isProduction();
+            if (!isProduction) {
+                // mock data lmao
+                setPlayerPercents({
+                    0: 114,
+                    1: 28
+                })
+            }
+        }
+        // useMockDataIfDevelop();
+        
 
     }, []);
 

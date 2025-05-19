@@ -1,9 +1,8 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { CssBaseline } from '@mui/material';
-import { BrowserRouter } from "react-router";
+import { HashRouter } from "react-router";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import { lightBlue } from '@mui/material/colors'
 import App from './App.jsx'
 import './index.css';
 import '@fontsource/roboto/300.css';
@@ -28,9 +27,9 @@ root.render(
   <StrictMode>
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <BrowserRouter>
+      <HashRouter>
         <App />
-      </BrowserRouter>
+      </HashRouter>
     </ThemeProvider>
   </StrictMode>
 );

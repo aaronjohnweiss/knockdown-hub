@@ -68,13 +68,16 @@ const createWindow = () => {
   }
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools();
+  if (!app.isPackaged) {
+    mainWindow.webContents.openDevTools();
+  }
 };
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.whenReady().then(() => {
+  ipcMain.handle('app:is-production', isProduction)
   ipcMain.handle('dialog:openDirectory', handleDirectoryOpen)
   ipcMain.handle('user-data:getSlippiData', getSlippiDataFromAppData)
   ipcMain.on('user-data:setSlippiData', (_, val) => setSlippiDataIntoAppData(val))
@@ -120,6 +123,9 @@ app.on('window-all-closed', () => {
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and import them here.
 
+const isProduction = async () => {
+  return app.isPackaged;
+};
 
 const handleDirectoryOpen = async () => {
   const { canceled, filePaths } = await dialog.showOpenDialog(null, {

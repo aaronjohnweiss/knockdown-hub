@@ -6,7 +6,6 @@ import RealtimeKnockdowns from '../components/RealtimeKnockdowns';
 import Configure from '../components/Configure';
 import { useNewGame } from '../hooks/useNewGame';
 import { usePlayerPercents } from '../hooks/usePlayerPercents';
-import { set } from 'lodash';
 
 export const Root = () => {
     const players = useNewGame();
@@ -15,7 +14,7 @@ export const Root = () => {
     const [allowedMoves, setAllowedMoves] = React.useState(['uair', 'dair', 'fair', 'nair']);
     const [configured, setConfigured] = React.useState(false);
     const [configureOpen, setConfigureOpen] = React.useState(false);
-    const [ offender, recipient ] = React.useMemo(() => swapCharacters ? players : [...players].reverse(), [players, swapCharacters]);
+    const [ offender, recipient ] = React.useMemo(() => swapCharacters ? [...players].reverse() : players, [players, swapCharacters]);
     
     React.useEffect(() => {
         window.electronAPI.onUpdateFilters(({ moveset }) => setAllowedMoves(moveset));

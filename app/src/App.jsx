@@ -4,13 +4,14 @@ import Root from "./routes/Root";
 import PageWrapper from "./components/PageWrapper";
 import { AppBar, Container, Toolbar, Typography, IconButton, Badge } from '@mui/material';
 import Background from "./components/Background";
+import favicon from '../../shared/assets/favicon/favicon-16.png';
 
 const App = () => {
     return (
     <>
         <AppBar position="fixed" sx={{ maxHeight: '31px', appRegion: 'drag', zIndex: (theme) => theme.zIndex.drawer + 1  }}>
             <Toolbar variant="dense" sx={{ minHeight: '31px', marginLeft: -1.5, display: 'flex', alignItems: 'center', gap: 1 }}>
-                <img src='/assets/favicon/favicon-16.png' />
+                <img src={favicon} />
                 <Typography variant='body2'  paddingTop='3px'>
                     KnowYourPercents
                 </Typography>
