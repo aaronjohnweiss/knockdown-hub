@@ -22,11 +22,16 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
+      - name: install yarn
+        run: npm install -g yarn
       - name: install dependencies
         working-directory: ./app
-        run: npm ci
+        run: yarn install
       - name: publish app
         working-directory: ./app
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: npm run publish-app
+        run: yarn publish-app
+      - name: uninstall yarn
+        if: always()
+        run: npm uninstall -g yarn
