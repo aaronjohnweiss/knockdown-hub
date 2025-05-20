@@ -4,6 +4,10 @@ on:
   workflow_dispatch:
 jobs:
   release:
+    permissions:
+      contents: write
+      actions: write
+      attestations: write
     strategy:
       matrix:
         os:
