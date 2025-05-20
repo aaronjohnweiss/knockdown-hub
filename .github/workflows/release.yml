@@ -26,7 +26,7 @@ jobs:
         run: npm install -g yarn
       - name: install dependencies
         working-directory: ./app
-        run: yarn install
+        run: yarn install --network-timeout 600000
       - name: publish app
         working-directory: ./app
         env:
