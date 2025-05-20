@@ -1,4 +1,3 @@
-import React from 'react';
 import bg from '/assets/main_menu.webm';
 import { Paper, styled } from '@mui/material';
 

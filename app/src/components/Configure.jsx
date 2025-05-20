@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Box, Typography, IconButton,  Drawer, TextField, Button, FormControlLabel } from '@mui/material';
+import { Box, Typography, IconButton,  Drawer, TextField, Button } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import PersonIcon from '@mui/icons-material/Person';
 import FolderIcon from '@mui/icons-material/Folder';
