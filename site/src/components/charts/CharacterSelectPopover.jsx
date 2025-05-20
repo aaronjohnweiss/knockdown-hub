@@ -11,6 +11,7 @@ const characterRows = [
 export const CharacterSelectPopover = ({ selectCharacter }) => {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [open, setOpen] = React.useState(false);
+    const [initialized, setInitialized] = React.useState(false);
 
     const handleClick = (event, value) => {
         if (!open && value === 18) {
@@ -22,8 +23,10 @@ export const CharacterSelectPopover = ({ selectCharacter }) => {
         }
     };
 
+    React.useEffect(() => !initialized && setInitialized(true), []);
+
     return (
-        <Box>
+        <Box display={initialized ? 'inherit' : 'null'} minWidth={'360px'}>
             {characterRows.map((row, idx) => (
                 <Box 
                     key={`characters-row-${idx}`} 
