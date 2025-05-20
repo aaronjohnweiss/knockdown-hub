@@ -1,11 +1,27 @@
 # Know Your Percents
-Dataset for Super Smash Brothers Melee Knockdown percentages.
+Dataset, site and companion app for Super Smash Brothers Melee Knockdown percentages.
 
+## Getting Started
 
-## Release Notes
+### Site
+* `cd ./site`
+* `yarn install`
+* `yarn start`
 
-* GitHub actions will build the electron app for release on push of a new tag. 
-```
-    git tag -a v1.0.0 -m "Release version 1.0.0"
-    git push origin v1.0.0
-```
+### App
+* `cd ./app`
+* `yarn install`
+* `yarn start`
+* Optional - turn on / modify mock data in `useNewGame.jsx` and `usePlayerPercents.jsx` hooks. 
+
+#### To Do
+* Introduce proper mock locations.
+
+### Data
+* `cd ./data`
+* Use global python console to execute scripts, or create your own and reference the `cc` and `kd` directories.
+* Provide `DRIVER_PATH` in .env if executing `ikneedata-scraper.py`
+
+#### To Do
+* Introduce requirements.txt
+* Include manual override section in parser logic for hitbox adjustments
