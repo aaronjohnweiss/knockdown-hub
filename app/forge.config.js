@@ -2,8 +2,22 @@ const { FusesPlugin } = require('@electron-forge/plugin-fuses');
 const { FuseV1Options, FuseVersion } = require('@electron/fuses');
 
 module.exports = {
+  publishers: [
+    {
+      name: '@electron-forge/publisher-github',
+      config: {
+        repository: {
+          owner: 'aaronjohnweiss',
+          name: 'know-your-percents'
+        },
+        prerelease: false,
+        draft: true
+      }
+    }
+  ],
   packagerConfig: {
     asar: true,
+    icon: '../shared/assets/favicon/favicon-desktop'
   },
   rebuildConfig: {},
   makers: [

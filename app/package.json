@@ -3,6 +3,7 @@
   "productName": "KnowYourPercents",
   "version": "1.0.0",
   "description": "SSBM Knockdown Percents Helper Tool",
+  "repository": "https://github.com/aaronjohnweiss/know-your-percents",
   "main": ".vite/build/main.js",
   "scripts": {
     "start": "electron-forge start",
@@ -26,6 +27,7 @@
     "@electron-forge/plugin-auto-unpack-natives": "^7.8.1",
     "@electron-forge/plugin-fuses": "^7.8.1",
     "@electron-forge/plugin-vite": "^7.8.1",
+    "@electron-forge/publisher-github": "^7.8.1",
     "@electron/fuses": "^1.8.0",
     "electron": "36.2.1",
     "vite": "^5.4.19"
@@ -43,6 +45,7 @@
     "lodash": "^4.17.21",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-router": "^7.6.0"
+    "react-router": "^7.6.0",
+    "update-electron-app": "^3.1.1"
   }
 }

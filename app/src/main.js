@@ -3,6 +3,8 @@ import { startFileWatcher } from "./utils/fileWatcher";
 import path from 'node:path';
 import started from 'electron-squirrel-startup';
 import Store from './store.js';
+import { updateElectronApp }  from 'update-electron-app';
+updateElectronApp();
 
 let watcher;
 let mainWindow;
@@ -15,7 +17,7 @@ if (started) {
 const store = new Store({
   configName: 'user-data',
   defaults: {
-    version: '1.0.2',
+    version: '1.0.2', // not to be confused with package json version
     window: {
       width: 800,
       height: 600
@@ -40,7 +42,7 @@ const handleConfigMigration = () => {
       break;
     case '1.0.1':
       delete tempStore.percentThresholdHighliting
-      tempStore.version = '1.0.2'
+      tempStore.version = '1.0.2' // not to be confused with package json version
       store.setStore(tempStore)
     default:
       // no more migrations to perform

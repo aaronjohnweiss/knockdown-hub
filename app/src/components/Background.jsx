@@ -9,7 +9,7 @@ const StyledBg = styled(Paper)({
     bottom: 0,
     minWidth: '100%',
     minHeight: '100%',
-    backgroundColor: '#00011900',
+    backgroundColor: '#000119DD',
     zIndex: -100,
 });
 
@@ -20,16 +20,18 @@ const StyledVideo = styled('video')({
     filter: `contrast(105%)`
 });
 
-const Background = () => {
+const Background = ({ showVideo=false }) => {
     return (
         <StyledBg>
-            <StyledVideo 
-                autoPlay 
-                loop muted 
-                playsInline
-            >
-                <source src={bg} type="video/webm" />
-            </StyledVideo>
+            {showVideo &&
+                <StyledVideo 
+                    autoPlay 
+                    loop muted 
+                    playsInline
+                >
+                    <source src={bg} type="video/webm" />
+                </StyledVideo>
+            }
         </StyledBg>
     );
 }

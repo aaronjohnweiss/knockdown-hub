@@ -55,10 +55,10 @@ export const Data = () => {
                 <Typography paddingBottom={1}>
                     Due to the opinionated decisions used to reduce the data, there is a significant chance the selected hitbox used to represent a move's knockdown isn't the ideal one. For example, let's look at Young Link's down air. 
                     The move infamously has two separate behaviors - the standard "pogo" where the tip of the sword strikes the opponent, and the flame "hilt" hitbox that is a meteor attack. 
-                    With these two hitboxes, the algorithm favors the flame "hilt" hitbox, as meteor attacks produce knockdown at 0%. However, us as players likely perceive the "pogo" to be the true version of the move we'd expect to see knockdown data for.
+                    With these two hitboxes, the algorithm favors the flame "hilt" hitbox, as it has stronger knockback. However, us as players likely perceive the "pogo" to be the true version of the move we'd expect to see knockdown data for.
                 </Typography>
                 <Typography>
-                    At the time of writing, Marth is in a rough spot in regards to this - his tipper hitboxes are prioritized for knockdown values (which isn't the "expected" hitbox to consistently land) as well as the strongest form of his specials being used.
+                    At the time of writing, Marth is likely in a similar spot in regards to this - his tipper hitboxes are prioritized for knockdown values (which isn't the "expected" hitbox to consistently land) as well as the strongest form of his specials being used.
                 </Typography>
                 <Grid size={{ xs: 10 }} offset={{ xs: 1 }}>
                     <Typography variant='subtitle2' component='h3' fontSize='1em' paddingY={1}>
