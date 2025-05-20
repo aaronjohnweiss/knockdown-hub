@@ -10,7 +10,6 @@ module.exports = {
           owner: 'aaronjohnweiss',
           name: 'know-your-percents'
         },
-        prerelease: false,
         draft: true
       }
     }

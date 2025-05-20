@@ -1,9 +1,11 @@
 # .github/workflows/release.yml
-name: Release app
+name: Release
 on:
-  workflow_dispatch:
+  push:
+    tags:
+      - 'v*'
 jobs:
-  build:
+  release:
     strategy:
       matrix:
         os:
@@ -20,9 +22,11 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: cd c./app
-      - run: npm ci
-      - name: Publish app
+      - name: install dependencies
+        working-directory: ./app
+        run: npm ci
+      - name: publish app
+        working-directory: ./app
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         run: npm run publish-app
