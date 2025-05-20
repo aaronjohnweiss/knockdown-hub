@@ -16,6 +16,7 @@ module.exports = {
   ],
   packagerConfig: {
     asar: true,
+    executableName: 'KnowYourPercents',
     icon: '../shared/assets/favicon/favicon-desktop'
   },
   rebuildConfig: {},
