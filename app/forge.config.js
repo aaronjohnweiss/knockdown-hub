@@ -31,7 +31,10 @@ module.exports = {
     },
     {
       name: '@electron-forge/maker-deb',
-      config: {},
+      executableName: 'KnowYourPercents',
+      config: {
+        productName: 'KnowYourPercents'
+      },
     },
     {
       name: '@electron-forge/maker-rpm',
