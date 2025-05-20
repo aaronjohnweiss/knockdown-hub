@@ -10,9 +10,9 @@ jobs:
       matrix:
         os:
           [
-            { name: 'linux', image: 'ubuntu-latest' },
+            # { name: 'linux', image: 'ubuntu-latest' }, # blocked by executableName issue for now
             { name: 'windows', image: 'windows-latest' },
-            # { name: 'macos', image: 'macos-latest' },
+            # { name: 'macos', image: 'macos-latest' }, # blocked by code signing for now
           ]
     runs-on: ${{ matrix.os.image }}
     steps:
