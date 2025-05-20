@@ -16,7 +16,7 @@ module.exports = {
   ],
   packagerConfig: {
     asar: true,
-    executableName: 'KnowYourPercents',
+    executableName: 'know-your-percents',
     icon: '../shared/assets/favicon/favicon-desktop'
   },
   rebuildConfig: {},
@@ -31,12 +31,8 @@ module.exports = {
     },
     {
       name: '@electron-forge/maker-deb',
-      executableName: 'KnowYourPercents',
       config: {
-        options: {
-          bin: 'KnowYourPercents'
-        },
-        productName: 'KnowYourPercents'
+        options: {},
       },
     },
     {

@@ -1,18 +1,16 @@
 # .github/workflows/release.yml
 name: Release
 on:
-  push:
-    tags:
-      - 'v*'
+  workflow_dispatch:
 jobs:
   release:
     strategy:
       matrix:
         os:
           [
-            # { name: 'linux', image: 'ubuntu-latest' }, # blocked by executableName issue for now
+            { name: 'linux', image: 'ubuntu-latest' }, # blocked by executableName issue for now
             { name: 'windows', image: 'windows-latest' },
-            # { name: 'macos', image: 'macos-latest' }, # blocked by code signing for now
+            { name: 'macos', image: 'macos-latest' }, # blocked by code signing for now
           ]
     runs-on: ${{ matrix.os.image }}
     steps:
@@ -21,16 +19,16 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
       - name: install yarn
         run: npm install -g yarn
       - name: install dependencies
         working-directory: ./app
-        run: yarn install --network-timeout 600000
+        run: yarn install --network-timeout 1000000
       - name: publish app
         working-directory: ./app
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: yarn publish-app
       - name: uninstall yarn
         if: always()
