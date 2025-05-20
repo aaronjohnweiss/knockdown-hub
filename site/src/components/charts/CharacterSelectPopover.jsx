@@ -55,6 +55,7 @@ export const CharacterSelectPopover = ({ selectCharacter }) => {
                     vertical: 'bottom',
                     horizontal: 'center',
                 }}
+                sx={{ minWidth: '80px' }}
                 onClose={() => setOpen(false)}
             >
                 {[18, 19].map((subCharacter) => (
