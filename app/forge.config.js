@@ -33,6 +33,9 @@ module.exports = {
       name: '@electron-forge/maker-deb',
       executableName: 'KnowYourPercents',
       config: {
+        options: {
+          bin: 'KnowYourPercents'
+        },
         productName: 'KnowYourPercents'
       },
     },
