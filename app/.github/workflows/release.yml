@@ -20,9 +20,11 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: cd ./app
-      - run: npm ci
-      - name: Publish app
+      - name: install dependencies
+        working-directory: ./app
+        run: npm ci
+      - name: publish app
+        working-directory: ./app
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         run: npm run publish-app
