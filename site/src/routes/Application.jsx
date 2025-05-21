@@ -96,7 +96,7 @@ export const App = () => {
                                     <Chip color="warning" size="small" label="Required" />
                                 </Box>
                                 <Typography>
-                                    The Slippi Replay Directory where new game files are created.
+                                    The moves that will appear on the realtime charts.
                                 </Typography>
                                 <Alert severity="info" sx={{ alignItems: 'center' }}>
                                     Despite being visually similar, the presets behave differently than the online chart due to not having character context. 
