@@ -57,6 +57,7 @@ export const KnockdownTable = ({ rows }) => {
             <TableCell align="right" sortDirection={sortAsc ? 'asc' : 'desc'}>
                 <Tooltip title='The earliest percentage at which the recipient will be knocked down'>
                   <TableSortLabel 
+                    active={!sortByCc}
                     direction={sortByCc ? 'asc' : sortAsc ? 'asc' : 'desc'}
                     onClick={() => handleSort('asdi')}
                   >
@@ -67,6 +68,7 @@ export const KnockdownTable = ({ rows }) => {
             <TableCell align="right">
                 <Tooltip title='The percentage at which the recipient will be knocked down while crouching'>
                     <TableSortLabel 
+                      active={sortByCc}
                       direction={!sortByCc ? 'asc' : sortAsc ? 'asc' : 'desc'}
                       onClick={() => handleSort('cc')}
                     >

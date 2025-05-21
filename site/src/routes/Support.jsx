@@ -1,8 +1,10 @@
 import { Grid, Typography, Link} from '@mui/material';
+import PageBackground from '../components/PageBackground';
 
 export const Support = () => {
     return (
         <Grid container>
+            <PageBackground imgSrc='./assets/sheik-falco.png' />
             <Grid size={{ xs: 12 }}>
                 <Typography>
                     Please consider supporting those in the community who make tools like this possible:

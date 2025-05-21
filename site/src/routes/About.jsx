@@ -1,26 +1,12 @@
 import { Grid, Paper, Typography, styled, Link } from '@mui/material';
-
-const StlyedBackground = styled(Paper)({
-    position: 'absolute',
-    top: 0,
-    backgroundImage: 'url("./assets/fox-falcon.png")',
-    maskImage: 'linear-gradient(180deg,transparent 0%,black 30%,black 80%,transparent 100%), linear-gradient(90deg,transparent 0%,black 40%,black 70%,transparent 100%); mask-composite: intersect',
-    backgroundRepeat: 'no-repeat',
-    minHeight: '700px',
-    left: '30%',
-    right: '0',
-    backgroundPosition: 'center',
-    opacity: '15%',
-    overflow: 'hidden',
-    zIndex: -5
-});
+import PageBackground from '../components/PageBackground';
 
 export const Home = () => {
     return (
         <Grid container spacing={2}>
-            <StlyedBackground />
+        <PageBackground imgSrc='./assets/fox-falcon.png' />
         <Grid size={{ xs: 12 }}>
-            <Typography>
+            <Typography paddingBottom={1}>
                 Welcome to KnowYourPercents! A specialized site and companion app for learning Knockdown percentages in Super Smash Bros. Melee.
             </Typography>
             <Typography variant='h2' fontSize='1.5em' paddingY={1}>

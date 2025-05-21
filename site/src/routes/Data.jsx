@@ -38,7 +38,7 @@ export const Data = () => {
                     <li>Select the attack / subattack of a move that produces the <b>earliest instance of knockback</b> (lowest percentage). The algorithm deems this move to be "the most effective" (and most commonly perceived) hitbox that represents the move.</li>
                 </Typography>
                 <Typography>
-                    From here, we reduce all selected moves for an entire character's matchup spread into an object of move arrays that map to the victim's character id. What does this look like? Let's visualize Captain Falcon(character ID 0)'s matchup spread into this reduced dataset:
+                    From here, we reduce all selected moves for an entire character's matchup spread into an object of move arrays that map to the victim's character id. What does this look like? Let's visualize Captain Falcon's (character id 0) matchup spread into this reduced dataset:
                 </Typography>
                 <FalconKnockdownTable />
                 <Typography>
@@ -57,15 +57,12 @@ export const Data = () => {
                     The move infamously has two separate behaviors - the standard "pogo" where the tip of the sword strikes the opponent, and the flame "hilt" hitbox that is a meteor attack. 
                     With these two hitboxes, the algorithm favors the flame "hilt" hitbox, as it has stronger knockback. However, us as players likely perceive the "pogo" to be the true version of the move we'd expect to see knockdown data for.
                 </Typography>
-                <Typography>
-                    At the time of writing, Marth is likely in a similar spot in regards to this - his tipper hitboxes are prioritized for knockdown values (which isn't the "expected" hitbox to consistently land) as well as the strongest form of his specials being used.
-                </Typography>
                 <Grid size={{ xs: 10 }} offset={{ xs: 1 }}>
                     <Typography variant='subtitle2' component='h3' fontSize='1em' paddingY={1}>
                         Let's fix this!
                     </Typography>
                     <Typography>
-                        Outside of purposing a new algorithm for the raw data parser, I'd like to ask the community to provide <Link to='https://github.com/aaronjohnweiss/know-your-percents/issues/new' target='_blank' rel='noreferrer noopener'>feature enhancement requests</Link> if cases such as the above are found in the dataset. When doing so, please include the following points:
+                        Outside of purposing a new algorithm for the raw data parser, I'd like to ask the community to provide feature enhancement requests via the <Link to='https://github.com/aaronjohnweiss/know-your-percents/issues' target='_blank' rel='noreferrer noopener'>issues</Link> page if cases such as the above are found in the dataset. When doing so, please include the following points:
                     </Typography>
                     <Typography component='ul'>
                         <li>The Character</li>
@@ -74,7 +71,7 @@ export const Data = () => {
                         <li>A short message on why this change is warranted</li>
                     </Typography>
                     <Typography>
-                        Using these requests, I can include static logic in the parser as it reduces the data to ensure these manually accounted for moves take priority.
+                        Using these requests, we can include static logic in the parser as it reduces the data to ensure these manually accounted for moves take priority.
                     </Typography>
                 </Grid>
                 

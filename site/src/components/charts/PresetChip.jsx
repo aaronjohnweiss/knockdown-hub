@@ -17,6 +17,7 @@ export const PresetChip = ({ presetName, currentMoves=[], preset=[], handleActio
         <Chip 
             label={presetName}
             variant="outlined" 
+            onClick={handlePresetClick}
             onDelete={handlePresetClick}
             deleteIcon={shouldAdd ? <AddIcon /> : <ClearIcon />}
         />

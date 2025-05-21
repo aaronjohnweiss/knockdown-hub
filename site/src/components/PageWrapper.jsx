@@ -20,7 +20,7 @@ export const PageWrapper = () => {
     }), [pathnames];
 
     return (
-        <Box display='flex' flexDirection='column' sx={{ flexGrow: 1 }}>
+        <Box display='flex' flexDirection='column' sx={{ flexGrow: 1, alignItems: 'stretch' }} >
             <Typography variant='h1' component='h1' fontSize={'2em'} sx={{ marginY: 3 }}>
                 {breadcrumbNameMap[`/${pathnames[pathnames.length - 1]}`]}
             </Typography>

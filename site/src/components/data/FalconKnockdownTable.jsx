@@ -32,7 +32,9 @@ export const FalconKnockdownTable = () => {
         }
         <TableHead>
           <TableRow>
-            <TableCell></TableCell>
+            <TableCell>
+              Move
+            </TableCell>
             {columns.map((id, idx) => (
                 <TableCell key={`column-${id}-${idx}`}>
                     <Tooltip title={characters[id].name} placement='top'>

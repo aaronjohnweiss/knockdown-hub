@@ -50,7 +50,17 @@ export const Footer = () => {
                 })}
             </Breadcrumbs>
             <Box flexGrow={1} />
-            <Box>
+            <Box display='flex' flexDirection='row' alignItems='center' gap={1}>
+                <Link 
+                    underline="hover" 
+                    color="inherit" 
+                    to="/support"
+                    component={RouterLink}
+                >
+                    <Typography sx={{ color: theme => theme.palette.text.primary }}>
+                        Support
+                    </Typography>
+                </Link>
                 <IconButton
                     aria-label="Bluesky Social Account"
                     color="inherit"
