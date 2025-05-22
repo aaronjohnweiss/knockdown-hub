@@ -25,3 +25,9 @@ Dataset, site and companion app for Super Smash Brothers Melee Knockdown percent
 #### To Do
 * Introduce requirements.txt
 * Include manual override section in parser logic for hitbox adjustments
+
+## Licenses
+
+* This project is licensed under the Mozilla Public License 2.0.
+See the LICENSE file for details.
+* License information for third-party components can be found in the licenses/ folder.
