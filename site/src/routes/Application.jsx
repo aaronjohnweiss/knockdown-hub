@@ -36,7 +36,7 @@ export const App = () => {
                     Due to Slippi requiring exclusive fullscreen for best performance, this app is designed to sit on an adjacent monitor. 
                     Any attempt to overlay the application on top of gameplay will result in degraded game performance.
                 </Alert>
-                <ol>
+                <ol style={{ paddingLeft: '24px' }}>
                     <li>
                         <Typography variant='p' component='h3'>
                             Install
@@ -69,7 +69,7 @@ export const App = () => {
                                     <Chip color="primary" size="small" label="Optional" />
                                 </Box>
                                 <Typography>
-                                    When a game loads, the app will set the palyer with the slippi tag as the "Offender" automatically.
+                                    When a game loads, the app will set the player with the slippi tag as the "Offender" automatically.
                                 </Typography>
                             </li>
                             <li>
@@ -135,12 +135,12 @@ export const App = () => {
                                 These setting will be remembered between games, but not saved on app exit.
                             </Alert>
                         </Box>
-                        <ul>
+                        <ul style={{ paddingLeft: '32px' }}>
                             <li>
                                 <Typography>
                                     You can switch characters just as you can in the online charts. 
                                 </Typography>
-                                <ImgContainer sx={{ marginLeft: '-96px'}}>
+                                <ImgContainer sx={{ marginLeft: '-90px'}}>
                                     <img src='/assets/adjust-1.png' alt='The app showing an option to swap characters.' style={imgStyle} />
                                 </ImgContainer>
                             </li>
@@ -148,7 +148,7 @@ export const App = () => {
                                 <Typography>
                                     You can switch to true CC values in the table header. 
                                 </Typography>
-                                <ImgContainer sx={{ marginLeft: '-96px'}}>
+                                <ImgContainer sx={{ marginLeft: '-90px'}}>
                                     <img src='/assets/adjust-2.png' alt='The app showing an option to swap what data is charted.' style={imgStyle} />
                                 </ImgContainer>
                             </li>

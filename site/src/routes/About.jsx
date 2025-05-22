@@ -13,7 +13,7 @@ export const Home = () => {
                 What is Knockdown?
             </Typography>
             <Typography>
-                In Super Smash Bros. Melee, a knockdown occurs when a character is sent into a specific vulnerable state after being hit a strong enough attack. Understanding which attacks reliably induce a knockdown is critical for establishing offensive pressure and setting up guaranteed follow-ups. Furthermore, the absence of a knockdown on certain hits can leave a character vulnerable to immediate retaliation, making the knowledge of these properties essential for both offensive and defensive strategies.
+                In Super Smash Bros. Melee, a knockdown occurs when a character is sent into a specific vulnerable state (DamageFall, also known as tumble) after being hit a strong enough attack alongside other factors such as recipient character weight. Understanding which attacks reliably induce a knockdown is critical for establishing offensive pressure and setting up guaranteed follow-ups. Furthermore, the absence of a knockdown on certain hits can leave a character vulnerable to immediate retaliation, making the knowledge of these properties essential for both offensive and defensive strategies.
             </Typography>
         </Grid>
         <Grid size={{ xs: 6, md: 4 }}>
@@ -34,6 +34,9 @@ export const Home = () => {
             <Grid size={{ xs: 6 }}>
                 <Typography paddingBottom={1}>
                     Externally, the <Link to='https://ikneedata.com/calculator.html' target='_blank' rel='noreferrer noopener'>IKneeData Calculator</Link> - created by Schmoo and GentleFox - is a complete and accurate resource for specific character interactions, and was the basis for the data used in this project.
+                </Typography>
+                <Typography paddingBottom={1}>
+                    This smashboards post by Kadano explains the in-depth mechanics behind knockback & tumble: <Link to='https://smashboards.com/threads/kadanos-perfect-marth-class-advanced-frame-data-application.337035/' target='_blank' rel='noreferrer noopener'>Kadano's perfect Marth class -- advanced frame data application</Link>
                 </Typography>
             </Grid>      
         </Grid>
