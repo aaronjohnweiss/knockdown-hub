@@ -17,6 +17,7 @@ export const PageWrapper = () => {
 
     React.useEffect(() => {
         document.title = `KnowYourPercents - ${breadcrumbNameMap[`/${pathnames[pathnames.length - 1]}`]}`
+        window.scroll(0, 0)
     }), [pathnames];
 
     return (
