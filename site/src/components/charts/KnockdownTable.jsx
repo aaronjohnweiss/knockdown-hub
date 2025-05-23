@@ -68,7 +68,7 @@ export const KnockdownTable = ({ rows, recipientId }) => {
                 </Tooltip>
             </TableCell>
             <TableCell align="right" sx={{ paddingX: 0, paddingRight: recipientId !== 17 ? 1 : 0 }}>
-                <Tooltip title='The percentage at which the recipient will be knocked down while crouching'>
+                <Tooltip title={`The percentage at which the recipient will be knocked down while crouching ${recipientId === 17 ? ' / break Yoshi DJ armor' : ''}`}>
                     <TableSortLabel 
                       active={sortBy === 'cc'}
                       direction={sortBy === 'cc' && sortAsc ? 'asc' : 'desc'}
@@ -80,7 +80,7 @@ export const KnockdownTable = ({ rows, recipientId }) => {
             </TableCell>
             {recipientId === 17 && (
               <TableCell align="right" sx={{ paddingLeft: 0, paddingRight: 1 }}>
-                  <Tooltip title='The percentage at which the move will break Yoshi doublejump armor'>
+                  <Tooltip title='The percentage at which the move will put Yoshi directly into knockdown while having doublejump armor'>
                       <TableSortLabel 
                         active={sortBy === 'ys'}
                         direction={sortBy === 'ys' && sortAsc ? 'asc' : 'desc'}
