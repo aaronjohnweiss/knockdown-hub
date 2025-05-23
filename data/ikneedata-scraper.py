@@ -32,26 +32,25 @@ start_time = time.time()
 driver.get(IKNEEDATA)
 time.sleep(SLEEP_TIME)
 
-# OPTIONAL - PARSE TRUE CC KOCKDOWN %
-if TRUE_CC:
-    cc_button = driver.find_element(By.ID, 'crouchingContainer')
-    cc_button.click()
+# YOSHI DJ ARMOR %
+cc_button = driver.find_element(By.ID, 'yoshiDJArmorContainer')
+cc_button.click()
 
 # Get list of victims
-select_victim = driver.find_element(By.ID, 'victim-char')
-driver.execute_script("arguments[0].scrollIntoView();", select_victim)
-select_victim.click()
-victim_list = driver.find_elements(By.CSS_SELECTOR, '.hbcharselect.hbcon')
-original_victims = []
-for v in victim_list:
-    text = v.text
-    original_victims.append(v.text)
+# select_victim = driver.find_element(By.ID, 'victim-char')
+# driver.execute_script("arguments[0].scrollIntoView();", select_victim)
+# select_victim.click()
+# victim_list = driver.find_elements(By.CSS_SELECTOR, '.hbcharselect.hbcon')
+# original_victims = []
+# for v in victim_list:
+#     text = v.text
+#     original_victims.append(v.text)
 
 # all victims
-print(original_victims)
+#print(original_victims)#
 
 exclude = []
-victims = [x for x in original_victims if x not in exclude]
+victims = ['Yoshi']
 
 id_list = []
 # Find by character
@@ -73,9 +72,8 @@ for character in characters:
 
     # iterate one victim at a time
     for victim in victims:
-        export_path = './kd/{characterId}-{victim}.json'
-        if TRUE_CC:
-            export_path = './cc/{characterId}-{victim}.json'
+        export_path = './ys/{characterId}-{victim}-dja.json'
+
         if os.path.isfile(export_path.format(characterId=characterId,victim=victim)):
             print('found + ' + export_path.format(characterId=characterId,victim=victim) + ', skipping')
             continue
@@ -155,7 +153,7 @@ for character in characters:
                             # BINARY SORT TO FIND % QUICKER
                             if not knockdown:
                                 low = 1
-                                high = 200
+                                high = 999
 
                                 while low <= high:
                                     mid = (low + high) // 2
@@ -202,7 +200,7 @@ for character in characters:
                     # BINARY SORT TO FIND % QUICKER
                     if not knockdown:
                         low = 1
-                        high = 200
+                        high = 999
 
                         while low <= high:
                             mid = (low + high) // 2

@@ -14,6 +14,7 @@ import SwapHorizIcon from '@mui/icons-material/SwapHoriz';
 import { aerials, throws, misc, specials, moveset_list } from '../../../../shared/moveset_list';
 import knockdown_data from '../../../../shared/knockdown_data.json';
 import cc_knockdown_data from '../../../../shared/cc_knockdown_data.json';
+import ys_knockdown_data from '../../../../shared/ys_knockdown_data.json';
 import MovesetFilter from './MovesetFilter';
 import PresetChip from './PresetChip';
 import KnockdownTable from './KnockdownTable';
@@ -60,7 +61,7 @@ export const Knockdowns = () => {
         .filter(move => knockdowns.asdi[move][recipientId] > -1)
         .filter(move => allowedMoves.includes(move))
         .sort((a, b) => knockdowns.asdi[a][recipientId] - knockdowns.asdi[b][recipientId])
-        .map(move => ({ move, asdi: knockdowns.asdi[move][recipientId], cc: knockdowns.cc[move][recipientId] })),
+        .map(move => ({ move, asdi: knockdowns.asdi[move][recipientId], cc: knockdowns.cc[move][recipientId], ys: ys_knockdown_data[offenderId][move] })),
         [recipientId, knockdowns, allowedMoves]
     );
 
@@ -74,7 +75,7 @@ export const Knockdowns = () => {
 
     return (
         <Grid container spacing={2} >
-            <Grid size={{ xs: 12, sm: 7 }}>
+            <Grid size={{ sm: 12, md: 7 }}>
                 <Typography variant='h5' component='h2' sx={{ paddingBottom: 2 }} >
                     Select Characters
                 </Typography>
@@ -153,11 +154,11 @@ export const Knockdowns = () => {
                     />                 
                 </Box>
             </Grid>
-            <Grid size={{ xs: 12, sm: 5 }} gap={1}>
+            <Grid size={{ sm: 12, md: 5 }} gap={1}>
                 <Typography variant='h5' component='h2' sx={{ paddingBottom: 2 }} >
                     Knockdowns
                 </Typography>
-                <KnockdownTable rows={tableRows} />
+                <KnockdownTable rows={tableRows} recipientId={recipientId} />
             </Grid>
         </Grid>
     )

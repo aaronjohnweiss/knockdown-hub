@@ -6,38 +6,40 @@ import {
     Typography, 
     Table,
     TableBody,
-    TableCell,
+    TableCell as MuiTableCell,
     TableContainer,
     TableHead,
-    TableRow
+    TableRow,
+    styled
 } from '@mui/material';
 
-export const KnockdownTable = ({ rows }) => {
-    const [sortByCc, setSortByCc] = React.useState(false);
+const TableCell = styled(MuiTableCell)({
+  padding: '8px 0px 8px 0px !important',
+  '&:first-child': {
+    padding: '8px 0px 8px 8px !important',
+  },
+  '&:last-child': {
+    padding: '8px 8px 8px 0px !important',
+  }
+})
+
+export const KnockdownTable = ({ rows, recipientId }) => {
+    const [sortBy, setSortBy] = React.useState('asdi');
     const [sortAsc, setSortAsc] = React.useState(true);
 
     const sortedRows = React.useMemo(() => {
-      const sortField = `${sortByCc ? 'cc' : 'asdi'}`;
+      const sortField = sortBy;
       return rows.sort((a, b) => sortAsc ? a[sortField] - b[sortField] : -(a[sortField] - b[sortField]))
-    }, [rows, sortAsc, sortByCc]);
+    }, [rows, sortAsc, sortBy]);
 
     const handleSort = React.useCallback((sortLabel) => {
-      if (sortLabel === 'cc') {
-        if (sortByCc) {
-          setSortAsc(!sortAsc);
-        } else {
-          setSortAsc(true);
-          setSortByCc(!sortByCc)
-        }
-      } else {
-        if (!sortByCc) {
-          setSortAsc(!sortAsc);
-        } else {
-          setSortAsc(true);
-          setSortByCc(!sortByCc)
-        }
-      }
-    }, [sortByCc, sortAsc]);
+          if (sortBy === sortLabel) { 
+             setSortAsc(!sortAsc)
+          } else {
+            setSortAsc(true);
+            setSortBy(sortLabel)
+          }
+    }, [sortBy, sortAsc]);
 
     return (
     <TableContainer component={Paper}>
@@ -54,28 +56,42 @@ export const KnockdownTable = ({ rows }) => {
         <TableHead>
           <TableRow>
             <TableCell>Move</TableCell>
-            <TableCell align="right" sortDirection={sortAsc ? 'asc' : 'desc'}>
+            <TableCell align="right" sortDirection={sortAsc ? 'asc' : 'desc'} sx={{ paddingX: 0 }}>
                 <Tooltip title='The earliest percentage at which the recipient will be knocked down'>
                   <TableSortLabel 
-                    active={!sortByCc}
-                    direction={sortByCc ? 'asc' : sortAsc ? 'asc' : 'desc'}
+                    active={sortBy === 'asdi'}
+                    direction={sortBy === 'asdi' && sortAsc ? 'asc' : 'desc'}
                     onClick={() => handleSort('asdi')}
                   >
                     ASDI %
                   </TableSortLabel>
                 </Tooltip>
             </TableCell>
-            <TableCell align="right">
+            <TableCell align="right" sx={{ paddingX: 0, paddingRight: recipientId !== 17 ? 1 : 0 }}>
                 <Tooltip title='The percentage at which the recipient will be knocked down while crouching'>
                     <TableSortLabel 
-                      active={sortByCc}
-                      direction={!sortByCc ? 'asc' : sortAsc ? 'asc' : 'desc'}
+                      active={sortBy === 'cc'}
+                      direction={sortBy === 'cc' && sortAsc ? 'asc' : 'desc'}
                       onClick={() => handleSort('cc')}
                     >
                       CC %
                   </TableSortLabel>
                 </Tooltip>
             </TableCell>
+            {recipientId === 17 && (
+              <TableCell align="right" sx={{ paddingLeft: 0, paddingRight: 1 }}>
+                  <Tooltip title='The percentage at which the move will break Yoshi doublejump armor'>
+                      <TableSortLabel 
+                        active={sortBy === 'ys'}
+                        direction={sortBy === 'ys' && sortAsc ? 'asc' : 'desc'}
+                        onClick={() => handleSort('ys')}
+                      >
+                        DJA %
+                    </TableSortLabel>
+                  </Tooltip>
+              </TableCell>
+            )}
+            
           </TableRow>
         </TableHead>
         <TableBody>
@@ -89,6 +105,9 @@ export const KnockdownTable = ({ rows }) => {
               </TableCell>
               <TableCell align="right">{row.asdi}</TableCell>
               <TableCell align="right">{row.cc === -1 ? 'N/A' : row.cc}</TableCell>
+              {recipientId === 17 && (
+                <TableCell align="right">{!row.ys ? 'N/A' : row.ys}</TableCell>
+              )}
             </TableRow>
           ))}
         </TableBody>
