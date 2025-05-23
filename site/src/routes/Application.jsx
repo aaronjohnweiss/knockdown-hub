@@ -26,7 +26,7 @@ export const App = () => {
                     Once playing, the app will automatically:
                 </Typography>
                     <ul>
-                        <li>Adjust the charts to the current matchup</li>
+                        <li>Adjust the chart to the current matchup</li>
                         <li>Highlight available moves that knockdown as percents change</li>
                     </ul>
                 <Typography variant='h2' fontSize='1.5em' paddingBottom={1} paddingTop={3}>
@@ -96,19 +96,15 @@ export const App = () => {
                                     <Chip color="warning" size="small" label="Required" />
                                 </Box>
                                 <Typography>
-                                    The moves that will appear on the realtime charts.
+                                    The moves that will appear on the realtime chart. Select a character for presets to fill correctly.
                                 </Typography>
-                                <Alert severity="info" sx={{ alignItems: 'center' }}>
-                                    Despite being visually similar, the presets behave differently than the online chart due to not having character context. 
-                                    Be sure to manually search for any moves that may not be covered by the presets. 
-                                </Alert>
                             </li>
                         </ul>
                         <ImgContainer>
                             <img src='/assets/configure-2.png' width={isMobile ? '80%' : '400px'} alt='The application configuration page.' style={imgStyle} />
                         </ImgContainer>
                         <Typography>
-                            Once configured correctly, you will see the idle state update to be "Waiting for a game..."
+                            Settings will save on either exiting the drawer or pressing "Save". Once configured correctly, you will see the idle state update to be "Waiting for game..."
                         </Typography>
                         <ImgContainer>
                             <img src='/assets/configure-3.png' width={isMobile ? '80%' : '400px'} alt='The is configured.' style={imgStyle} />
@@ -119,7 +115,7 @@ export const App = () => {
                             Gameplay
                         </Typography>
                         <Typography>
-                            You're ready to play! Hop into any Slippi game to see knockdown charts. They will update in realtime in green when the recipient's percent threshold exceeds the entry.
+                            You're ready to play! Hop into any Slippi game to see the knockdown chart. The rows will update to the color green when the recipient's percent exceeds the row's percent.
                         </Typography>
                         <Alert severity="info" sx={{ alignItems: 'center' }}>
                             Doubles matches not supported.
@@ -132,7 +128,7 @@ export const App = () => {
                         </Typography>
                         <Box p={1}>
                             <Alert severity="info" sx={{ alignItems: 'center' }}>
-                                These setting will be remembered between games, but not saved on app exit.
+                                These settings will be remembered between games, but not saved on app exit.
                             </Alert>
                         </Box>
                         <ul style={{ paddingLeft: '32px' }}>

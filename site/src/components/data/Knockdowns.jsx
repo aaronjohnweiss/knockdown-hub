@@ -50,13 +50,6 @@ export const Knockdowns = () => {
         })
     }, [offenderId]);
 
-    const rows = React.useMemo(() => Object.keys(knockdowns)
-        .filter(move => knockdowns[move][recipientId] > -1)
-        .filter(move => allowedMoves.includes(move))
-        .sort((a, b) => knockdowns[a][recipientId] - knockdowns[b][recipientId]),
-        [recipientId, knockdowns, allowedMoves]
-    );
-
     const tableRows = React.useMemo(() => Object.keys(knockdowns.asdi)
         .filter(move => knockdowns.asdi[move][recipientId] > -1)
         .filter(move => allowedMoves.includes(move))

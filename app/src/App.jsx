@@ -2,7 +2,7 @@ import { Routes, Route, Navigate } from "react-router";
 
 import Root from "./routes/Root";
 import PageWrapper from "./components/PageWrapper";
-import { AppBar, Container, Toolbar, Typography, IconButton, Badge } from '@mui/material';
+import { AppBar, Container, Toolbar, Typography } from '@mui/material';
 import Background from "./components/Background";
 import favicon from '../../shared/assets/favicon/favicon-16.png';
 

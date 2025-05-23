@@ -5,11 +5,16 @@ import PersonIcon from '@mui/icons-material/Person';
 import FolderIcon from '@mui/icons-material/Folder';
 import MovesetFilter from './MovesetFilter';
 import PresetChip from './PresetChip';
-import { moveset_list } from '../../../shared/moveset_list';
+import CharacterSelector from './CharacterSelector';
+
+import knockdown_data from '../../../shared/knockdown_data.json';
+import characters from '../../../shared/characters.json';
+import { aerials, throws, misc, specials, moveset_list } from '../../../shared/moveset_list';
 
 const Configure = ({ open, onClose, onFulfilled, allowedMoves, setAllowedMoves }) => {
 
     const [tag, setTag] = React.useState('');
+    const [presetCharacterId, setPresetCharacterId] = React.useState(0);
     const [replayDirectory, setReplayDirectory] = React.useState('');
 
     const folderBrowse = React.useCallback(async () => {
@@ -53,7 +58,18 @@ const Configure = ({ open, onClose, onFulfilled, allowedMoves, setAllowedMoves }
             newAllowedMoves = allowedMoves.filter(mv => !preset.includes(mv));
         }
         setAllowedMoves(newAllowedMoves);
-    }, [allowedMoves])
+    }, [allowedMoves, presetCharacterId])
+
+    const presets = React.useMemo(() => {
+        const presetCharacterMoves = Object.keys(knockdown_data[presetCharacterId]);
+        return ({
+            all: presetCharacterMoves,
+            aerials: presetCharacterMoves.filter(item => aerials.includes(item)),
+            specials: presetCharacterMoves.filter(item => specials.includes(item)),
+            throws: presetCharacterMoves.filter(item => throws.includes(item)),
+            misc: presetCharacterMoves.filter(item => misc.includes(item))
+        })
+    }, [presetCharacterId])
 
     return (
         <Drawer 
@@ -123,44 +139,62 @@ const Configure = ({ open, onClose, onFulfilled, allowedMoves, setAllowedMoves }
                 <Typography variant='overline' alignSelf={'flex-start'}  >
                     Presets
                 </Typography>
-                <Box display='flex' gap={1} flexDirection='row' flexWrap='wrap'>
-                    <PresetChip 
-                        presetName='Aerials' 
-                        currentMoves={allowedMoves}  
-                        preset={['upair', 'fair', 'bair', 'dair', 'nair', 'zair']}
-                        handleAction={handlePresetClick}
-                    />
-                    <PresetChip 
-                        presetName='Tilts' 
-                        currentMoves={allowedMoves}  
-                        preset={['dtilt', 'utilt', 'ftilt']}
-                        handleAction={handlePresetClick}
-                    />
-                    <PresetChip 
-                        presetName='Smashes' 
-                        currentMoves={allowedMoves}  
-                        preset={['dsmash', 'usmash', 'fsmash']}
-                        handleAction={handlePresetClick}
-                    />
-                    <PresetChip 
-                        presetName='Specials' 
-                        currentMoves={allowedMoves}  
-                        preset={['upSpecial', 'neutralSpecial', 'sideSpecial', 'downSpecial']}
-                        handleAction={handlePresetClick}
-                    />
-                    <PresetChip 
-                        presetName='Throws' 
-                        currentMoves={allowedMoves}  
-                        preset={['uthrow', 'dthrow', 'fthrow', 'bthrow']}
-                        handleAction={handlePresetClick}
-                    />
-                    <PresetChip 
-                        presetName="All"
-                        currentMoves={allowedMoves}  
-                        preset={moveset_list}
-                        handleAction={handlePresetClick}
-                    />            
+                <Box display='flex' flexDirection='row' gap={1}>
+                    <Box>
+                        <CharacterSelector title={`Preset Character (${characters[presetCharacterId].name})`} characterId={presetCharacterId} selectCharacter={(id) => setPresetCharacterId(id)} />
+                    </Box>
+                    <Box display='flex' gap={1} flexDirection='row' flexWrap='wrap'>     
+                        <PresetChip 
+                            presetName='Aerials' 
+                            currentMoves={allowedMoves}  
+                            preset={presets.aerials}
+                            handleAction={handlePresetClick}
+                        />
+                        <PresetChip 
+                            presetName='Tilts' 
+                            currentMoves={allowedMoves}  
+                            preset={['dtilt', 'utilt', 'ftilt']}
+                            handleAction={handlePresetClick}
+                        />
+                        <PresetChip 
+                            presetName='Smashes' 
+                            currentMoves={allowedMoves}  
+                            preset={['dsmash', 'usmash', 'fsmash']}
+                            handleAction={handlePresetClick}
+                        />
+                        <PresetChip 
+                            presetName='Specials' 
+                            currentMoves={allowedMoves}  
+                            preset={presets.specials}
+                            handleAction={handlePresetClick}
+                        />
+                        <PresetChip 
+                            presetName='Throws' 
+                            currentMoves={allowedMoves}  
+                            preset={presets.throws}
+                            handleAction={handlePresetClick}
+                        />
+                        <PresetChip 
+                            presetName='Misc' 
+                            currentMoves={allowedMoves}  
+                            preset={presets.misc}
+                            handleAction={handlePresetClick}
+                        />
+                        <PresetChip 
+                            presetName="All (Selected Character)"
+                            currentMoves={allowedMoves}
+                            preset={presets.all}
+                            handleAction={handlePresetClick}
+                        />   
+                        <PresetChip 
+                            presetName="All"
+                            currentMoves={allowedMoves}  
+                            preset={moveset_list}
+                            handleAction={handlePresetClick}
+                        />          
+                    </Box>
                 </Box>
+                <Box flexGrow={1} />
                 <Button onClick={handleClose} sx={{ alignSelf: 'flex-end' }}>Save</Button>
             </Box>
         </Drawer>
