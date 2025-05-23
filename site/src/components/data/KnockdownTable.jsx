@@ -15,7 +15,7 @@ import {
 
 const TableCell = styled(MuiTableCell)({
   padding: '8px 0px 8px 0px !important',
-  '&:first-child': {
+  '&:first-of-type': {
     padding: '8px 0px 8px 8px !important',
   },
   '&:last-child': {

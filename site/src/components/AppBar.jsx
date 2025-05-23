@@ -7,7 +7,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import SettingsBrightnessIcon from '@mui/icons-material/SettingsBrightness';
 import { Link } from "react-router";
 
-const pages = ['Charts', 'App', 'Data'];
+const pages = ['Data', 'App', 'About'];
 
 
 const CustomAppBar = () => {

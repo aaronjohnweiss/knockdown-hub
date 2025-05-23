@@ -1,65 +1,84 @@
-import { Grid, Paper, Typography, styled, Link } from '@mui/material';
-import PageBackground from '../components/PageBackground';
+import { Grid, Typography, Link } from '@mui/material';
+import { FalconKnockdownTable } from '../components/about/FalconKnockdownTable'
 
-export const Home = () => {
+export const Data = () => {
     return (
-        <Grid container spacing={2}>
-        <PageBackground imgSrc='./assets/fox-falcon.png' />
-        <Grid size={{ xs: 12 }}>
-            <Typography paddingBottom={1}>
-                Welcome to KnowYourPercents! A specialized site and companion app for learning Knockdown percentages in Super Smash Bros. Melee.
-            </Typography>
-            <Typography variant='h2' fontSize='1.5em' paddingY={1}>
-                What is Knockdown?
-            </Typography>
-            <Typography>
-                In Super Smash Bros. Melee, a knockdown occurs when a character is sent into a specific vulnerable state (DamageFall, also known as tumble) after being hit a strong enough attack alongside other factors such as recipient character weight. Understanding which attacks reliably induce a knockdown is critical for establishing offensive pressure and setting up guaranteed follow-ups. Furthermore, the absence of a knockdown on certain hits can leave a character vulnerable to immediate retaliation, making the knowledge of these properties essential for both offensive and defensive strategies.
-            </Typography>
-        </Grid>
-        <Grid size={{ xs: 6, md: 4 }}>
-        </Grid>
-        <Grid size={{ xs: 6, md: 4 }}>
-        </Grid>
-        <Grid container size={{ xs: 12 }} spacing={1}>
+        <Grid container spacing={2} overflow='hidden' sx={{ minWidth: 0 }}>
             <Grid size={{ xs: 12 }}>
-                <Typography variant='h2' fontSize='1.5em'>
-                    Where can I learn Knockdown percents?
+                <Typography variant='h2' fontSize='1.5em' paddingY={1}>
+                    How was this data collected?
                 </Typography>
-            </Grid>
-            <Grid size={{ xs: 6 }}>
                 <Typography>
-                    On this site - the <Link to='/charts'>charts</Link> page contains comprehensive, matchup-specific breakdowns of moves and their knockdown properties, allowing you to explore frame data and knockback values in detail.
+                    The data for this site and companion app originates from the <Link to='https://ikneedata.com/calculator.html' target='_blank' rel='noreferrer noopener'>IKneeData Calculator</Link> - created by Schmoo and GentleFox. It stood to reason that researching the site's code to grab the values and formulas would be the best way to go. This would allow for quickly running through all permutations of knockdown interactions. So anyway, a web-scraper created in Python was utilized for the calculator that performs the following: 
+                </Typography>
+                <Typography component='ol'>
+                    <li>Capture the list of attackers</li>
+                    <li>Capture the list of victims</li>
+                    <li>Iterate across each attacker</li>
+                    <li>For each attacker, iterate across all victims</li>
+                    <li>For each victim, iterate across all attacker's attacks + subattacks + hitboxes of those attacks</li>
+                    <li>Modify victim's percentage until the "knockdown" element appears</li>
+                    <li>Record the attacker, victim, attack, subattack, hitbox, and percentage</li>
+                </Typography>
+                <Typography>
+                    This process outputs a set of raw data that can be found in the <Link to='https://github.com/aaronjohnweiss/know-your-percents' target='_blank' rel='noreferrer noopener'>know-your-percents</Link> repository. With 26 characters, each having 26 unique match-ups, the operation produced approximately 140,000 lines of data!
                 </Typography>
             </Grid>
-            <Grid size={{ xs: 6 }}>
-                <Typography paddingBottom={1}>
-                    Externally, the <Link to='https://ikneedata.com/calculator.html' target='_blank' rel='noreferrer noopener'>IKneeData Calculator</Link> - created by Schmoo and GentleFox - is a complete and accurate resource for specific character interactions, and was the basis for the data used in this project.
+            <Grid size={{ xs: 12 }}>
+                <Typography variant='h2' fontSize='1.5em' paddingY={1}>
+                    How was this data refined?
+                </Typography>
+                <Typography>
+                    While having the raw data is good, it isn't quite useful to us. For example, think of Fox's neutral air. With a strong initial hitbox and weak lingering hitbox, we need to make a decision on what hitbox becomes "the" knockdown percentage for his neutral air. To do so, we need an opinionated algorithm to pick and choose these important hitboxes of a move. The current algorithm operates as follows:
+                </Typography>
+                <Typography component='ol'>
+                    <li>Iterate across each attacker</li>
+                    <li>For each attacker, iterate across all victims</li>
+                    <li>For each victim, iterate across all attacker's attacks + subattacks + hitboxes of those attacks</li>
+                    <li>Select the attack / subattack of a move that produces the <b>earliest instance of knockback</b> (lowest percentage). The algorithm deems this move to be "the most effective" (and most commonly perceived) hitbox that represents the move.</li>
+                </Typography>
+                <Typography>
+                    From here, we reduce all selected moves for an entire character's matchup spread into an object of move arrays that map to the victim's character id. What does this look like? Let's visualize Captain Falcon's (character id 0) matchup spread into this reduced dataset:
+                </Typography>
+                <FalconKnockdownTable />
+                <Typography>
+                    With this foundation, the charts and application started to take shape. But what are the drawbacks?
+                </Typography>
+            </Grid>
+            <Grid container size={{ xs: 12 }}>
+                <Typography variant='h2' fontSize='1.5em' paddingY={1}>
+                    Limitations / caveats
                 </Typography>
                 <Typography paddingBottom={1}>
-                    This smashboards post by Kadano explains the in-depth mechanics behind knockback & tumble: <Link to='https://smashboards.com/threads/kadanos-perfect-marth-class-advanced-frame-data-application.337035/' target='_blank' rel='noreferrer noopener'>Kadano's perfect Marth class -- advanced frame data application</Link>
+                    Knockdowns are only charted up to 200% for the recipient - it is a future goal to recreate the data up to 999% for thoroughness.
                 </Typography>
-            </Grid>      
+                <Typography paddingBottom={1}>
+                    Due to the opinionated decisions used to reduce the data, there is a significant chance the selected hitbox used to represent a move's knockdown isn't the ideal one. For example, let's look at Young Link's down air. 
+                    The move infamously has two separate behaviors - the standard "pogo" where the tip of the sword strikes the opponent, and the flame "hilt" hitbox that is a meteor attack. 
+                    With these two hitboxes, the algorithm favors the flame "hilt" hitbox, as it has stronger knockback. However, us as players likely perceive the "pogo" to be the true version of the move we'd expect to see knockdown data for.
+                </Typography>
+                <Grid size={{ xs: 10 }} offset={{ xs: 1 }}>
+                    <Typography variant='subtitle2' component='h3' fontSize='1em' paddingY={1}>
+                        Let's fix this!
+                    </Typography>
+                    <Typography>
+                        Outside of purposing a new algorithm for the raw data parser, I'd like to ask the community to provide feature enhancement requests via the <Link to='https://github.com/aaronjohnweiss/know-your-percents/issues' target='_blank' rel='noreferrer noopener'>issues</Link> page if cases such as the above are found in the dataset. When doing so, please include the following points:
+                    </Typography>
+                    <Typography component='ul'>
+                        <li>The Character</li>
+                        <li>The current attack / subattack / move id being used in the algorithm (if possible)</li>
+                        <li>The proposed attack / subattack / move id</li>
+                        <li>A short message on why this change is warranted</li>
+                    </Typography>
+                    <Typography>
+                        Using these requests, we can include static logic in the parser as it reduces the data to ensure these manually accounted for moves take priority.
+                    </Typography>
+                </Grid>
+                
+            </Grid>
+            
         </Grid>
-
-        <Grid size={{ xs: 12 }}>
-            <Typography variant='h2' fontSize='1.5em' paddingY={1}>
-                How can I apply this information?
-            </Typography>
-            <Typography>
-                Go beyond pages of data with the <Link to='/app'>downloadable app</Link> for enhanced features such as real-time knockdown chart updates during Slippi matches. 
-            </Typography>
-        </Grid>
-        <Grid size={{ xs: 12 }}>
-            <Typography variant='h2' fontSize='1.5em' paddingY={1}>
-                Show me the data
-            </Typography>
-            <Typography>
-                Visit the <Link to='/data'>data</Link> page to learn about this data - including collection methodology, its caveats and other limitations. Contribute your own findings to help make this resource even more comprehensive and accurate for the Melee community.
-            </Typography>
-        </Grid>
-        </Grid>
-
     )
 }
 
-export default Home;
+export default Data;

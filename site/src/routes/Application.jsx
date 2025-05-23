@@ -152,6 +152,11 @@ export const App = () => {
                                     <img src='/assets/adjust-2.png' alt='The app showing an option to swap what data is charted.' style={imgStyle} />
                                 </ImgContainer>
                             </li>
+                            <li>
+                                <Typography>
+                                    Yoshi DJA values currently cannot be toggled to in-app. Please use the data page for now.
+                                </Typography>
+                            </li>
                         </ul>
                         
                     </li>

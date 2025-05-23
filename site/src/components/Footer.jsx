@@ -1,13 +1,13 @@
-import { Box, Breadcrumbs, Typography, Link, IconButton } from '@mui/material';
+import { Box, Breadcrumbs, Typography, Link, IconButton, alpha } from '@mui/material';
 import { Link as RouterLink, useLocation } from 'react-router';
 import BlueskyIcon from './BlueskyIcon';
 import DiscordIcon from './DiscordIcon';
 
 const breadcrumbNameMap = {
   '/': 'Home',
-  '/app': 'App',
-  '/charts': 'Charts',
   '/data': 'Data',
+  '/app': 'App',
+  '/about': 'About',
   '/support': 'Support',
 };
 
@@ -28,7 +28,7 @@ export const Footer = () => {
                         Home
                     </Typography>
                 </Link>
-                {pathnames.map((value, index) => {
+                {pathnames.map((_, index) => {
                     const last = index === pathnames.length - 1;
                     const to = `/${pathnames.slice(0, index + 1).join('/')}`;
 

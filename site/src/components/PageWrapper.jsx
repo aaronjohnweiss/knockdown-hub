@@ -6,8 +6,8 @@ import Footer from './Footer';
 const breadcrumbNameMap = {
   '/': 'Welcome',
   '/app': 'App',
-  '/charts': 'Charts',
   '/data': 'Data',
+  '/about': 'About',
   '/support': 'Support',
 };
 
