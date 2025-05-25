@@ -11,7 +11,7 @@ sorted_ids = ['CF', 'DK', 'Fx', 'GW', 'Kb', 'Bw', 'Lk', 'Lg', 'Ma', 'Ms', 'Mw', 
 
 
 def find_lowest_kd(move):
-    lowest = 300
+    lowest = 1000
 
     def traverse(obj):
         nonlocal lowest
@@ -27,7 +27,7 @@ def find_lowest_kd(move):
                 traverse(value)
 
     traverse(move)
-    if lowest != 300:
+    if lowest != 1000:
         return lowest
     else:
         return -1
@@ -50,7 +50,11 @@ if __name__ == '__main__':
             with open(kd_file) as json_data:
                 kd_victim_data = json.load(json_data)
 
-            for key, value in cc_victim_data[sorted_ids[i]][opp].items():
+            victim_data = kd_victim_data
+            if PARSE_CC_DATA:
+                victim_data = cc_victim_data
+
+            for key, value in victim_data[sorted_ids[i]][opp].items():
                 tempVal = value
                 if PARSE_CC_DATA:
                     # account for bug in which throws are affected by CC in ikneedata. default to normal kd values
