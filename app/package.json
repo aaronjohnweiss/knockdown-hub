@@ -1,7 +1,7 @@
 {
   "name": "know-your-percents",
   "productName": "KnowYourPercents",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "SSBM Knockdown Percents Helper Tool",
   "repository": "https://github.com/aaronjohnweiss/know-your-percents",
   "main": ".vite/build/main.js",
