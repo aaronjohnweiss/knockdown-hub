@@ -52,12 +52,12 @@
             },
             "dair": {
                 "hits2and4": {
-                    "id1": -1,
-                    "id0": -1
+                    "id1": 301,
+                    "id0": 280
                 },
                 "hits1and3": {
-                    "id1": -1,
-                    "id0": -1
+                    "id1": 301,
+                    "id0": 280
                 }
             },
             "uair": {
@@ -168,7 +168,7 @@
                 }
             },
             "downSpecial": {
-                "id0": -1
+                "id0": 235
             },
             "upSpecial": {
                 "hits7_11": {
@@ -197,8 +197,8 @@
             },
             "mr_saturn": {
                 "drop": {
-                    "id1": -1,
-                    "id0": -1
+                    "id1": 323,
+                    "id0": 323
                 },
                 "dash_throw": {
                     "id1": 111,
@@ -309,7 +309,7 @@
             },
             "turnip_stitch": {
                 "drop": {
-                    "id0": -1
+                    "id0": 251
                 },
                 "dash_throw": {
                     "id0": 0
@@ -335,7 +335,7 @@
             },
             "turnip_doteyes": {
                 "drop": {
-                    "id0": -1
+                    "id0": 251
                 },
                 "dash_throw": {
                     "id0": 31
@@ -361,7 +361,7 @@
             },
             "turnip_winky": {
                 "drop": {
-                    "id0": -1
+                    "id0": 251
                 },
                 "dash_throw": {
                     "id0": 58
@@ -387,7 +387,7 @@
             },
             "turnip_regular": {
                 "drop": {
-                    "id0": -1
+                    "id0": 251
                 },
                 "dash_throw": {
                     "id0": 90

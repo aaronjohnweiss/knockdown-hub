@@ -33,28 +33,28 @@
                     "id0": 145
                 },
                 "lvl_1": {
-                    "id0": -1
+                    "id0": 255
                 },
                 "lvl_0": {
-                    "id0": -1
+                    "id0": 415
                 }
             },
             "PikaSpecial": {
                 "ground": {
-                    "id1": -1,
-                    "id0": -1
+                    "id1": 547,
+                    "id0": 547
                 },
                 "air": {
-                    "id0": -1
+                    "id0": 405
                 }
             },
             "PichuSpecial": {
                 "ground": {
-                    "id1": -1,
-                    "id0": -1
+                    "id1": 547,
+                    "id0": 547
                 },
                 "air": {
-                    "id0": -1
+                    "id0": 617
                 }
             },
             "PeachSpecial": {
@@ -141,10 +141,10 @@
                 }
             },
             "MarioSpecial": {
-                "id0": -1
+                "id0": 523
             },
             "LuigiSpecial": {
-                "id0": -1
+                "id0": 523
             },
             "LinkSpecial": {
                 "fully_charge": {
@@ -172,20 +172,20 @@
                     "id0": 181
                 },
                 "lvl_2_charge": {
-                    "id0": -1
+                    "id0": 203
                 },
                 "lvl_1_charge": {
-                    "id0": -1
+                    "id0": 231
                 },
                 "no_charge": {
-                    "id0": -1
+                    "id0": 265
                 },
                 "pointblank": {
-                    "id0": -1
+                    "id0": 629
                 }
             },
             "BowserSpecial": {
-                "id0": -1
+                "id0": 441
             },
             "pummel": {
                 "id0": -1
@@ -336,16 +336,16 @@
             },
             "jab": {
                 "inf": {
-                    "id1": -1,
-                    "id0": -1
+                    "id1": 629,
+                    "id0": 629
                 },
                 "hit2": {
-                    "id1": -1,
-                    "id0": -1
+                    "id1": 311,
+                    "id0": 311
                 },
                 "hit1": {
-                    "id1": -1,
-                    "id0": -1
+                    "id1": 375,
+                    "id0": 375
                 }
             },
             "neutralSpecial": {
@@ -355,16 +355,16 @@
             },
             "MrGandWSpecial": {
                 "sausage": {
-                    "id0": -1
+                    "id0": 251
                 },
                 "pan": {
                     "id0": 100
                 }
             },
             "YoshiSpecial": {
-                "id2": -1,
-                "id1": -1,
-                "id0": -1
+                "id2": 309,
+                "id1": 309,
+                "id0": 309
             },
             "MewtwoSpecial": {
                 "lvl_7": {
@@ -386,10 +386,10 @@
                     "id0": 115
                 },
                 "lvl_1": {
-                    "id0": -1
+                    "id0": 214
                 },
                 "lvl_0": {
-                    "id0": -1
+                    "id0": 377
                 },
                 "air_charging": {
                     "id0": 156
@@ -439,10 +439,10 @@
                     "id0": 21
                 },
                 "hits1_5": {
-                    "id3": -1,
-                    "id2": -1,
-                    "id1": -1,
-                    "id0": -1
+                    "id3": 568,
+                    "id2": 568,
+                    "id1": 759,
+                    "id0": 759
                 }
             },
             "DKSpecial": {
@@ -548,7 +548,7 @@
                 "id0": -1
             },
             "DocSpecial": {
-                "id0": -1
+                "id0": 415
             },
             "YLinkSpecial": {
                 "fully_charged": {
@@ -570,7 +570,7 @@
                     "id0": 140
                 },
                 "pointblank": {
-                    "id0": -1
+                    "id0": 493
                 }
             },
             "ICsSpecial": {
@@ -578,14 +578,14 @@
                     "id0": 0
                 },
                 "shot": {
-                    "id0": -1
+                    "id0": 278
                 }
             },
             "SheikSpecial": {
-                "id3": -1,
-                "id2": -1,
-                "id1": -1,
-                "id0": -1
+                "id3": 438,
+                "id2": 438,
+                "id1": 438,
+                "id0": 438
             }
         }
     }

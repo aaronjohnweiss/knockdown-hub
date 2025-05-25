@@ -155,7 +155,7 @@
                 }
             },
             "neutralSpecial": {
-                "id0": -1
+                "id0": 325
             },
             "downSpecial": {
                 "landing": {
@@ -170,10 +170,10 @@
             },
             "upSpecial": {
                 "air_hits7_11": {
-                    "id0": -1
+                    "id0": 364
                 },
                 "air_hits2_6": {
-                    "id0": -1
+                    "id0": 290
                 },
                 "air_hit1": {
                     "id0": 0
@@ -202,10 +202,10 @@
                     "id0": 0
                 },
                 "fthrow": {
-                    "id0": -1
+                    "id0": 264
                 },
                 "fthrow_air": {
-                    "id0": -1
+                    "id0": 264
                 },
                 "bite": {
                     "id0": -1

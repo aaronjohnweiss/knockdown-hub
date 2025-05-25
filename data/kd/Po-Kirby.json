@@ -147,7 +147,7 @@
             },
             "neutralSpecial": {
                 "shot": {
-                    "id0": -1
+                    "id0": 224
                 },
                 "melee": {
                     "id0": 0

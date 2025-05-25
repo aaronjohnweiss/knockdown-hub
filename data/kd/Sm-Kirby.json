@@ -196,10 +196,10 @@
             },
             "downSpecial": {
                 "explosion": {
-                    "id0": -1
+                    "id0": 275
                 },
                 "bomb": {
-                    "id0": -1
+                    "id0": 275
                 }
             },
             "sideSpecial": {
@@ -207,7 +207,7 @@
                     "id0": 16
                 },
                 "homing": {
-                    "id0": -1
+                    "id0": 450
                 }
             },
             "neutralSpecial": {
@@ -230,15 +230,15 @@
                     "id0": 116
                 },
                 "lvl_1": {
-                    "id0": -1
+                    "id0": 206
                 },
                 "lvl_0": {
-                    "id0": -1
+                    "id0": 335
                 }
             },
             "zair": {
-                "id1": -1,
-                "id0": -1
+                "id1": 289,
+                "id0": 289
             },
             "upSpecial": {
                 "air_hit12": {

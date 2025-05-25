@@ -36,25 +36,25 @@
                     "id0": 193
                 },
                 "lvl_0": {
-                    "id0": -1
+                    "id0": 316
                 }
             },
             "PikaSpecial": {
                 "ground": {
-                    "id1": -1,
-                    "id0": -1
+                    "id1": 415,
+                    "id0": 415
                 },
                 "air": {
-                    "id0": -1
+                    "id0": 307
                 }
             },
             "PichuSpecial": {
                 "ground": {
-                    "id1": -1,
-                    "id0": -1
+                    "id1": 415,
+                    "id0": 415
                 },
                 "air": {
-                    "id0": -1
+                    "id0": 469
                 }
             },
             "PeachSpecial": {
@@ -141,10 +141,10 @@
                 }
             },
             "MarioSpecial": {
-                "id0": -1
+                "id0": 397
             },
             "LuigiSpecial": {
-                "id0": -1
+                "id0": 397
             },
             "LinkSpecial": {
                 "fully_charge": {
@@ -178,14 +178,14 @@
                     "id0": 174
                 },
                 "no_charge": {
-                    "id0": -1
+                    "id0": 201
                 },
                 "pointblank": {
-                    "id0": -1
+                    "id0": 479
                 }
             },
             "BowserSpecial": {
-                "id0": -1
+                "id0": 336
             },
             "pummel": {
                 "id0": -1
@@ -336,16 +336,16 @@
             },
             "jab": {
                 "inf": {
-                    "id1": -1,
-                    "id0": -1
+                    "id1": 479,
+                    "id0": 479
                 },
                 "hit2": {
-                    "id1": -1,
-                    "id0": -1
+                    "id1": 236,
+                    "id0": 236
                 },
                 "hit1": {
-                    "id1": -1,
-                    "id0": -1
+                    "id1": 285,
+                    "id0": 285
                 }
             },
             "neutralSpecial": {
@@ -362,9 +362,9 @@
                 }
             },
             "YoshiSpecial": {
-                "id2": -1,
-                "id1": -1,
-                "id0": -1
+                "id2": 236,
+                "id1": 236,
+                "id0": 236
             },
             "MewtwoSpecial": {
                 "lvl_7": {
@@ -389,7 +389,7 @@
                     "id0": 162
                 },
                 "lvl_0": {
-                    "id0": -1
+                    "id0": 287
                 },
                 "air_charging": {
                     "id0": 118
@@ -439,10 +439,10 @@
                     "id0": 15
                 },
                 "hits1_5": {
-                    "id3": -1,
-                    "id2": -1,
-                    "id1": -1,
-                    "id0": -1
+                    "id3": 433,
+                    "id2": 433,
+                    "id1": 579,
+                    "id0": 579
                 }
             },
             "DKSpecial": {
@@ -548,7 +548,7 @@
                 "id0": -1
             },
             "DocSpecial": {
-                "id0": -1
+                "id0": 315
             },
             "YLinkSpecial": {
                 "fully_charged": {
@@ -570,7 +570,7 @@
                     "id0": 105
                 },
                 "pointblank": {
-                    "id0": -1
+                    "id0": 375
                 }
             },
             "ICsSpecial": {
@@ -578,14 +578,14 @@
                     "id0": 0
                 },
                 "shot": {
-                    "id0": -1
+                    "id0": 211
                 }
             },
             "SheikSpecial": {
-                "id3": -1,
-                "id2": -1,
-                "id1": -1,
-                "id0": -1
+                "id3": 333,
+                "id2": 333,
+                "id1": 333,
+                "id0": 333
             }
         }
     }

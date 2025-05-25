@@ -36,25 +36,25 @@
                     "id0": 187
                 },
                 "lvl_0": {
-                    "id0": -1
+                    "id0": 306
                 }
             },
             "PikaSpecial": {
                 "ground": {
-                    "id1": -1,
-                    "id0": -1
+                    "id1": 402,
+                    "id0": 402
                 },
                 "air": {
-                    "id0": -1
+                    "id0": 297
                 }
             },
             "PichuSpecial": {
                 "ground": {
-                    "id1": -1,
-                    "id0": -1
+                    "id1": 402,
+                    "id0": 402
                 },
                 "air": {
-                    "id0": -1
+                    "id0": 454
                 }
             },
             "PeachSpecial": {
@@ -141,10 +141,10 @@
                 }
             },
             "MarioSpecial": {
-                "id0": -1
+                "id0": 385
             },
             "LuigiSpecial": {
-                "id0": -1
+                "id0": 385
             },
             "LinkSpecial": {
                 "fully_charge": {
@@ -181,11 +181,11 @@
                     "id0": 195
                 },
                 "pointblank": {
-                    "id0": -1
+                    "id0": 464
                 }
             },
             "BowserSpecial": {
-                "id0": -1
+                "id0": 325
             },
             "pummel": {
                 "id0": -1
@@ -336,16 +336,16 @@
             },
             "jab": {
                 "inf": {
-                    "id1": -1,
-                    "id0": -1
+                    "id1": 464,
+                    "id0": 464
                 },
                 "hit2": {
-                    "id1": -1,
-                    "id0": -1
+                    "id1": 229,
+                    "id0": 229
                 },
                 "hit1": {
-                    "id1": -1,
-                    "id0": -1
+                    "id1": 276,
+                    "id0": 276
                 }
             },
             "neutralSpecial": {
@@ -362,9 +362,9 @@
                 }
             },
             "YoshiSpecial": {
-                "id2": -1,
-                "id1": -1,
-                "id0": -1
+                "id2": 228,
+                "id1": 228,
+                "id0": 228
             },
             "MewtwoSpecial": {
                 "lvl_7": {
@@ -389,7 +389,7 @@
                     "id0": 157
                 },
                 "lvl_0": {
-                    "id0": -1
+                    "id0": 277
                 },
                 "air_charging": {
                     "id0": 115
@@ -439,10 +439,10 @@
                     "id0": 14
                 },
                 "hits1_5": {
-                    "id3": -1,
-                    "id2": -1,
-                    "id1": -1,
-                    "id0": -1
+                    "id3": 419,
+                    "id2": 419,
+                    "id1": 560,
+                    "id0": 560
                 }
             },
             "DKSpecial": {
@@ -548,7 +548,7 @@
                 "id0": -1
             },
             "DocSpecial": {
-                "id0": -1
+                "id0": 305
             },
             "YLinkSpecial": {
                 "fully_charged": {
@@ -570,7 +570,7 @@
                     "id0": 102
                 },
                 "pointblank": {
-                    "id0": -1
+                    "id0": 364
                 }
             },
             "ICsSpecial": {
@@ -578,14 +578,14 @@
                     "id0": 0
                 },
                 "shot": {
-                    "id0": -1
+                    "id0": 204
                 }
             },
             "SheikSpecial": {
-                "id3": -1,
-                "id2": -1,
-                "id1": -1,
-                "id0": -1
+                "id3": 322,
+                "id2": 322,
+                "id1": 322,
+                "id0": 322
             }
         }
     }

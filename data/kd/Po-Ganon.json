@@ -117,8 +117,8 @@
                     "id0": -1
                 },
                 "hit1": {
-                    "id1": -1,
-                    "id0": -1
+                    "id1": 230,
+                    "id0": 230
                 }
             },
             "downSpecial": {
@@ -147,7 +147,7 @@
             },
             "neutralSpecial": {
                 "shot": {
-                    "id0": -1
+                    "id0": 277
                 },
                 "melee": {
                     "id0": 0
