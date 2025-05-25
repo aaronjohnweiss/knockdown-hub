@@ -68,7 +68,7 @@ export const Knockdowns = () => {
 
     return (
         <Grid container spacing={2} >
-            <Grid size={{ sm: 12, md: 7 }}>
+            <Grid size={{ xs: 12, sm: 12, md: 7 }}>
                 <Typography variant='h5' component='h2' sx={{ paddingBottom: 2 }} >
                     Select Characters
                 </Typography>
@@ -147,7 +147,7 @@ export const Knockdowns = () => {
                     />                 
                 </Box>
             </Grid>
-            <Grid size={{ sm: 12, md: 5 }} gap={1}>
+            <Grid size={{ xs: 12, sm: 12, md: 5 }} gap={1}>
                 <Typography variant='h5' component='h2' sx={{ paddingBottom: 2 }} >
                     Knockdowns
                 </Typography>
