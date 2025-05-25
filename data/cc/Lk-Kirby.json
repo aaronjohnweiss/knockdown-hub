@@ -2,7 +2,7 @@
     "Lk": {
         "Kirby": {
             "dthrow": {
-                "id0": -1
+                "id0": 239
             },
             "uthrow": {
                 "id0": 83
@@ -14,7 +14,7 @@
                 "id0": 193
             },
             "pummel": {
-                "id0": -1
+                "id0": 245
             },
             "edge": {
                 "fast": {
@@ -193,10 +193,10 @@
             },
             "jab": {
                 "inf": {
-                    "id3": -1,
-                    "id2": -1,
-                    "id1": -1,
-                    "id0": -1
+                    "id3": 635,
+                    "id2": 635,
+                    "id1": 776,
+                    "id0": 989
                 },
                 "hit3": {
                     "id3": 134,
@@ -205,43 +205,43 @@
                     "id0": 134
                 },
                 "hit2": {
-                    "id3": -1,
-                    "id2": -1,
-                    "id1": -1,
-                    "id0": -1
+                    "id3": 399,
+                    "id2": 399,
+                    "id1": 399,
+                    "id0": 399
                 },
                 "hit1": {
-                    "id3": -1,
-                    "id2": -1,
-                    "id1": -1,
-                    "id0": -1
+                    "id3": 282,
+                    "id2": 282,
+                    "id1": 282,
+                    "id0": 282
                 }
             },
             "downSpecial": {
                 "release_19+": {},
                 "drop": {
-                    "id0": -1
+                    "id0": 735
                 },
                 "dash_throw": {
-                    "id0": -1
+                    "id0": 274
                 },
                 "airborne_fthrow": {
-                    "id0": -1
+                    "id0": 328
                 },
                 "airborne_uthrow": {
-                    "id0": -1
+                    "id0": 292
                 },
                 "airborne_dthrow": {
-                    "id0": -1
+                    "id0": 280
                 },
                 "grounded_fthrow": {
-                    "id0": -1
+                    "id0": 261
                 },
                 "grounded_uthrow": {
-                    "id0": -1
+                    "id0": 229
                 },
                 "grounded_dthrow": {
-                    "id0": -1
+                    "id0": 218
                 },
                 "explosion": {
                     "id0": 162
@@ -261,13 +261,13 @@
                     "id0": 111
                 },
                 "return": {
-                    "id0": -1
+                    "id0": 841
                 },
                 "late": {
-                    "id0": -1
+                    "id0": 296
                 },
                 "clean": {
-                    "id0": -1
+                    "id0": 233
                 }
             },
             "neutralSpecial": {
@@ -290,29 +290,29 @@
                     "id0": 199
                 },
                 "lvl_4_charge": {
-                    "id0": -1
+                    "id0": 219
                 },
                 "lvl_3_charge": {
-                    "id0": -1
+                    "id0": 242
                 },
                 "lvl_2_charge": {
-                    "id0": -1
+                    "id0": 271
                 },
                 "lvl_1_charge": {
-                    "id0": -1
+                    "id0": 307
                 },
                 "no_charge": {
-                    "id0": -1
+                    "id0": 353
                 },
                 "pointblank": {
-                    "id0": -1
+                    "id0": 833
                 }
             },
             "unknown": {
-                "id1": -1
+                "id1": 308
             },
             "zair": {
-                "id1": -1
+                "id1": 308
             },
             "upSpecial": {
                 "air_hit5": {

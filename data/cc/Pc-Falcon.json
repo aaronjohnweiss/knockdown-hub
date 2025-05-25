@@ -2,7 +2,7 @@
     "Pc": {
         "Falcon": {
             "dthrow": {
-                "id0": -1
+                "id0": 282
             },
             "uthrow": {
                 "id0": 122
@@ -52,12 +52,12 @@
             },
             "dair": {
                 "hits2and4": {
-                    "id1": -1,
-                    "id0": -1
+                    "id1": 574,
+                    "id0": 551
                 },
                 "hits1and3": {
-                    "id1": -1,
-                    "id0": -1
+                    "id1": 574,
+                    "id0": 551
                 }
             },
             "uair": {
@@ -142,10 +142,10 @@
             },
             "jab": {
                 "hit2": {
-                    "id3": -1,
-                    "id2": -1,
-                    "id1": -1,
-                    "id0": -1
+                    "id3": 261,
+                    "id2": 261,
+                    "id1": 261,
+                    "id0": 261
                 },
                 "hit1": {
                     "id3": -1,
@@ -168,7 +168,7 @@
                 }
             },
             "downSpecial": {
-                "id0": -1
+                "id0": 509
             },
             "upSpecial": {
                 "hits7_11": {
@@ -197,24 +197,24 @@
             },
             "mr_saturn": {
                 "drop": {
-                    "id1": -1,
-                    "id0": -1
+                    "id1": 608,
+                    "id0": 608
                 },
                 "dash_throw": {
-                    "id1": -1,
-                    "id0": -1
+                    "id1": 216,
+                    "id0": 216
                 },
                 "airborne_dthrow": {
-                    "id1": -1,
-                    "id0": -1
+                    "id1": 221,
+                    "id0": 221
                 },
                 "airborne_uthrow": {
-                    "id1": -1,
-                    "id0": -1
+                    "id1": 231,
+                    "id0": 231
                 },
                 "airborne_fthrow": {
-                    "id1": -1,
-                    "id0": -1
+                    "id1": 259,
+                    "id0": 259
                 },
                 "grounded_dthrow": {
                     "id1": 171,
@@ -225,8 +225,8 @@
                     "id0": 180
                 },
                 "grounded_fthrow": {
-                    "id1": -1,
-                    "id0": -1
+                    "id1": 206,
+                    "id0": 206
                 }
             },
             "bob_omb": {
@@ -309,7 +309,7 @@
             },
             "turnip_stitch": {
                 "drop": {
-                    "id0": -1
+                    "id0": 543
                 },
                 "dash_throw": {
                     "id0": 19
@@ -335,7 +335,7 @@
             },
             "turnip_doteyes": {
                 "drop": {
-                    "id0": -1
+                    "id0": 543
                 },
                 "dash_throw": {
                     "id0": 86
@@ -361,7 +361,7 @@
             },
             "turnip_winky": {
                 "drop": {
-                    "id0": -1
+                    "id0": 543
                 },
                 "dash_throw": {
                     "id0": 138
@@ -387,19 +387,19 @@
             },
             "turnip_regular": {
                 "drop": {
-                    "id0": -1
+                    "id0": 543
                 },
                 "dash_throw": {
-                    "id0": -1
+                    "id0": 203
                 },
                 "airborne_dthrow": {
-                    "id0": -1
+                    "id0": 207
                 },
                 "airborne_uthrow": {
-                    "id0": -1
+                    "id0": 216
                 },
                 "airborne_fthrow": {
-                    "id0": -1
+                    "id0": 241
                 },
                 "grounded_dthrow": {
                     "id0": 162

@@ -2,7 +2,7 @@
     "Pc": {
         "Falco": {
             "dthrow": {
-                "id0": -1
+                "id0": 282
             },
             "uthrow": {
                 "id0": 122
@@ -52,12 +52,12 @@
             },
             "dair": {
                 "hits2and4": {
-                    "id1": -1,
-                    "id0": -1
+                    "id1": 506,
+                    "id0": 486
                 },
                 "hits1and3": {
-                    "id1": -1,
-                    "id0": -1
+                    "id1": 506,
+                    "id0": 486
                 }
             },
             "uair": {
@@ -142,10 +142,10 @@
             },
             "jab": {
                 "hit2": {
-                    "id3": -1,
-                    "id2": -1,
-                    "id1": -1,
-                    "id0": -1
+                    "id3": 230,
+                    "id2": 230,
+                    "id1": 230,
+                    "id0": 230
                 },
                 "hit1": {
                     "id3": -1,
@@ -168,7 +168,7 @@
                 }
             },
             "downSpecial": {
-                "id0": -1
+                "id0": 449
             },
             "upSpecial": {
                 "hits7_11": {
@@ -197,8 +197,8 @@
             },
             "mr_saturn": {
                 "drop": {
-                    "id1": -1,
-                    "id0": -1
+                    "id1": 536,
+                    "id0": 536
                 },
                 "dash_throw": {
                     "id1": 190,
@@ -209,12 +209,12 @@
                     "id0": 194
                 },
                 "airborne_uthrow": {
-                    "id1": -1,
-                    "id0": -1
+                    "id1": 203,
+                    "id0": 203
                 },
                 "airborne_fthrow": {
-                    "id1": -1,
-                    "id0": -1
+                    "id1": 228,
+                    "id0": 228
                 },
                 "grounded_dthrow": {
                     "id1": 149,
@@ -309,7 +309,7 @@
             },
             "turnip_stitch": {
                 "drop": {
-                    "id0": -1
+                    "id0": 479
                 },
                 "dash_throw": {
                     "id0": 13
@@ -335,7 +335,7 @@
             },
             "turnip_doteyes": {
                 "drop": {
-                    "id0": -1
+                    "id0": 479
                 },
                 "dash_throw": {
                     "id0": 74
@@ -361,7 +361,7 @@
             },
             "turnip_winky": {
                 "drop": {
-                    "id0": -1
+                    "id0": 479
                 },
                 "dash_throw": {
                     "id0": 120
@@ -387,7 +387,7 @@
             },
             "turnip_regular": {
                 "drop": {
-                    "id0": -1
+                    "id0": 479
                 },
                 "dash_throw": {
                     "id0": 178
@@ -399,7 +399,7 @@
                     "id0": 190
                 },
                 "airborne_fthrow": {
-                    "id0": -1
+                    "id0": 212
                 },
                 "grounded_dthrow": {
                     "id0": 142

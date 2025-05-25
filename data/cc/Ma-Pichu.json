@@ -2,7 +2,7 @@
     "Ma": {
         "Pichu": {
             "dthrow": {
-                "id0": -1
+                "id0": 230
             },
             "uthrow": {
                 "id0": 66
@@ -148,8 +148,8 @@
             },
             "dash": {
                 "late": {
-                    "id1": -1,
-                    "id0": -1
+                    "id1": 279,
+                    "id0": 279
                 },
                 "clean": {
                     "id1": 74,
@@ -173,7 +173,7 @@
                 }
             },
             "neutralSpecial": {
-                "id0": -1
+                "id0": 606
             },
             "downSpecial": {
                 "air_hit8": {

@@ -2,7 +2,7 @@
     "Kb": {
         "Link": {
             "dthrow": {
-                "id0": -1
+                "id0": 247
             },
             "uthrow": {
                 "id0": 54
@@ -30,31 +30,31 @@
                     "id0": 168
                 },
                 "lvl_2": {
-                    "id0": -1
+                    "id0": 258
                 },
                 "lvl_1": {
-                    "id0": -1
+                    "id0": 428
                 },
                 "lvl_0": {
-                    "id0": -1
+                    "id0": 680
                 }
             },
             "PikaSpecial": {
                 "ground": {
-                    "id1": -1,
-                    "id0": -1
+                    "id1": 854,
+                    "id0": 854
                 },
                 "air": {
-                    "id0": -1
+                    "id0": 636
                 }
             },
             "PichuSpecial": {
                 "ground": {
-                    "id1": -1,
-                    "id0": -1
+                    "id1": 854,
+                    "id0": 854
                 },
                 "air": {
-                    "id0": -1
+                    "id0": 963
                 }
             },
             "PeachSpecial": {
@@ -141,10 +141,10 @@
                 }
             },
             "MarioSpecial": {
-                "id0": -1
+                "id0": 799
             },
             "LuigiSpecial": {
-                "id0": -1
+                "id0": 799
             },
             "LinkSpecial": {
                 "fully_charge": {
@@ -157,35 +157,35 @@
                     "id0": 187
                 },
                 "lvl_7_charge": {
-                    "id0": -1
+                    "id0": 203
                 },
                 "lvl_6_charge": {
-                    "id0": -1
+                    "id0": 220
                 },
                 "lvl_5_charge": {
-                    "id0": -1
+                    "id0": 240
                 },
                 "lvl_4_charge": {
-                    "id0": -1
+                    "id0": 264
                 },
                 "lvl_3_charge": {
-                    "id0": -1
+                    "id0": 292
                 },
                 "lvl_2_charge": {
-                    "id0": -1
+                    "id0": 327
                 },
                 "lvl_1_charge": {
-                    "id0": -1
+                    "id0": 369
                 },
                 "no_charge": {
-                    "id0": -1
+                    "id0": 424
                 },
                 "pointblank": {
-                    "id0": -1
+                    "id0": 999
                 }
             },
             "BowserSpecial": {
-                "id0": -1
+                "id0": 719
             },
             "pummel": {
                 "id0": -1
@@ -235,8 +235,8 @@
                     "id0": -1
                 },
                 "hits1_6": {
-                    "id1": -1,
-                    "id0": -1
+                    "id1": 207,
+                    "id0": 207
                 }
             },
             "uair": {
@@ -262,12 +262,12 @@
                     "id0": 67
                 },
                 "hit2": {
-                    "id1": -1,
-                    "id0": -1
+                    "id1": 225,
+                    "id0": 225
                 },
                 "hit1": {
-                    "id1": -1,
-                    "id0": -1
+                    "id1": 225,
+                    "id0": 225
                 }
             },
             "nair": {
@@ -309,8 +309,8 @@
                 }
             },
             "dtilt": {
-                "id1": -1,
-                "id0": -1
+                "id1": 292,
+                "id0": 292
             },
             "utilt": {
                 "late": {
@@ -336,16 +336,16 @@
             },
             "jab": {
                 "inf": {
-                    "id1": -1,
-                    "id0": -1
+                    "id1": 999,
+                    "id0": 999
                 },
                 "hit2": {
-                    "id1": -1,
-                    "id0": -1
+                    "id1": 496,
+                    "id0": 496
                 },
                 "hit1": {
-                    "id1": -1,
-                    "id0": -1
+                    "id1": 597,
+                    "id0": 597
                 }
             },
             "neutralSpecial": {
@@ -355,16 +355,16 @@
             },
             "MrGandWSpecial": {
                 "sausage": {
-                    "id0": -1
+                    "id0": 438
                 },
                 "pan": {
-                    "id0": -1
+                    "id0": 374
                 }
             },
             "YoshiSpecial": {
-                "id2": -1,
-                "id1": -1,
-                "id0": -1
+                "id2": 495,
+                "id1": 495,
+                "id0": 495
             },
             "MewtwoSpecial": {
                 "lvl_7": {
@@ -383,19 +383,19 @@
                     "id0": 137
                 },
                 "lvl_2": {
-                    "id0": -1
+                    "id0": 218
                 },
                 "lvl_1": {
-                    "id0": -1
+                    "id0": 374
                 },
                 "lvl_0": {
-                    "id0": -1
+                    "id0": 625
                 },
                 "air_charging": {
-                    "id0": -1
+                    "id0": 297
                 },
                 "ground_charging": {
-                    "id0": -1
+                    "id0": 297
                 }
             },
             "RoySpecial": {
@@ -439,8 +439,8 @@
                     "id0": 104
                 },
                 "hits1_5": {
-                    "id3": -1,
-                    "id2": -1,
+                    "id3": 916,
+                    "id2": 916,
                     "id1": -1,
                     "id0": -1
                 }
@@ -517,7 +517,7 @@
                     "id0": -1
                 },
                 "wave": {
-                    "id0": -1
+                    "id0": 326
                 }
             },
             "sideSpecial": {
@@ -548,26 +548,26 @@
                 "id0": -1
             },
             "DocSpecial": {
-                "id0": -1
+                "id0": 636
             },
             "YLinkSpecial": {
                 "fully_charged": {
                     "id0": 184
                 },
                 "lvl_4_charge": {
-                    "id0": -1
+                    "id0": 230
                 },
                 "lvl_3_charge": {
-                    "id0": -1
+                    "id0": 249
                 },
                 "lvl_2_charge": {
-                    "id0": -1
+                    "id0": 272
                 },
                 "lvl_1_charge": {
-                    "id0": -1
+                    "id0": 299
                 },
                 "no_charge": {
-                    "id0": -1
+                    "id0": 330
                 },
                 "pointblank": {
                     "id0": -1
@@ -578,14 +578,14 @@
                     "id0": 56
                 },
                 "shot": {
-                    "id0": -1
+                    "id0": 437
                 }
             },
             "SheikSpecial": {
-                "id3": -1,
-                "id2": -1,
-                "id1": -1,
-                "id0": -1
+                "id3": 767,
+                "id2": 767,
+                "id1": 767,
+                "id0": 767
             }
         }
     }

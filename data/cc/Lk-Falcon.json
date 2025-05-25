@@ -2,7 +2,7 @@
     "Lk": {
         "Falcon": {
             "dthrow": {
-                "id0": -1
+                "id0": 239
             },
             "uthrow": {
                 "id0": 83
@@ -14,7 +14,7 @@
                 "id0": 193
             },
             "pummel": {
-                "id0": -1
+                "id0": 295
             },
             "edge": {
                 "fast": {
@@ -193,9 +193,9 @@
             },
             "jab": {
                 "inf": {
-                    "id3": -1,
-                    "id2": -1,
-                    "id1": -1,
+                    "id3": 762,
+                    "id2": 762,
+                    "id1": 931,
                     "id0": -1
                 },
                 "hit3": {
@@ -205,43 +205,43 @@
                     "id0": 162
                 },
                 "hit2": {
-                    "id3": -1,
-                    "id2": -1,
-                    "id1": -1,
-                    "id0": -1
+                    "id3": 479,
+                    "id2": 479,
+                    "id1": 479,
+                    "id0": 479
                 },
                 "hit1": {
-                    "id3": -1,
-                    "id2": -1,
-                    "id1": -1,
-                    "id0": -1
+                    "id3": 339,
+                    "id2": 339,
+                    "id1": 339,
+                    "id0": 339
                 }
             },
             "downSpecial": {
                 "release_19+": {},
                 "drop": {
-                    "id0": -1
+                    "id0": 883
                 },
                 "dash_throw": {
-                    "id0": -1
+                    "id0": 330
                 },
                 "airborne_fthrow": {
-                    "id0": -1
+                    "id0": 394
                 },
                 "airborne_uthrow": {
-                    "id0": -1
+                    "id0": 351
                 },
                 "airborne_dthrow": {
-                    "id0": -1
+                    "id0": 337
                 },
                 "grounded_fthrow": {
-                    "id0": -1
+                    "id0": 314
                 },
                 "grounded_uthrow": {
-                    "id0": -1
+                    "id0": 276
                 },
                 "grounded_dthrow": {
-                    "id0": -1
+                    "id0": 263
                 },
                 "explosion": {
                     "id0": 195
@@ -264,10 +264,10 @@
                     "id0": -1
                 },
                 "late": {
-                    "id0": -1
+                    "id0": 356
                 },
                 "clean": {
-                    "id0": -1
+                    "id0": 282
                 }
             },
             "neutralSpecial": {
@@ -281,38 +281,38 @@
                     "id0": 187
                 },
                 "lvl_7_charge": {
-                    "id0": -1
+                    "id0": 203
                 },
                 "lvl_6_charge": {
-                    "id0": -1
+                    "id0": 220
                 },
                 "lvl_5_charge": {
-                    "id0": -1
+                    "id0": 240
                 },
                 "lvl_4_charge": {
-                    "id0": -1
+                    "id0": 264
                 },
                 "lvl_3_charge": {
-                    "id0": -1
+                    "id0": 292
                 },
                 "lvl_2_charge": {
-                    "id0": -1
+                    "id0": 327
                 },
                 "lvl_1_charge": {
-                    "id0": -1
+                    "id0": 369
                 },
                 "no_charge": {
-                    "id0": -1
+                    "id0": 424
                 },
                 "pointblank": {
-                    "id0": -1
+                    "id0": 999
                 }
             },
             "unknown": {
-                "id1": -1
+                "id1": 371
             },
             "zair": {
-                "id1": -1
+                "id1": 371
             },
             "upSpecial": {
                 "air_hit5": {

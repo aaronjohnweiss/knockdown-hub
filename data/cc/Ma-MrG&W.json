@@ -2,7 +2,7 @@
     "Ma": {
         "MrG&W": {
             "dthrow": {
-                "id0": -1
+                "id0": 230
             },
             "uthrow": {
                 "id0": 66
@@ -148,8 +148,8 @@
             },
             "dash": {
                 "late": {
-                    "id1": -1,
-                    "id0": -1
+                    "id1": 288,
+                    "id0": 288
                 },
                 "clean": {
                     "id1": 77,
@@ -173,7 +173,7 @@
                 }
             },
             "neutralSpecial": {
-                "id0": -1
+                "id0": 626
             },
             "downSpecial": {
                 "air_hit8": {

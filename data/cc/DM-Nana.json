@@ -162,8 +162,8 @@
                     "id0": 149
                 },
                 "clean": {
-                    "id1": -1,
-                    "id0": -1
+                    "id1": 203,
+                    "id0": 203
                 }
             },
             "jab": {
@@ -183,7 +183,7 @@
                 }
             },
             "neutralSpecial": {
-                "id0": -1
+                "id0": 626
             },
             "downSpecial": {
                 "air_hit5": {
