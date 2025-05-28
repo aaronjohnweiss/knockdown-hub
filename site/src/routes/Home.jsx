@@ -38,6 +38,9 @@ export const Home = () => {
                 <Typography paddingBottom={1}>
                     This smashboards post by Kadano explains the in-depth mechanics behind knockback & tumble: <Link to='https://smashboards.com/threads/kadanos-perfect-marth-class-advanced-frame-data-application.337035/' target='_blank' rel='noreferrer noopener'>Kadano's perfect Marth class -- advanced frame data application</Link>
                 </Typography>
+                <Typography paddingBottom={1}>
+                    <Link to='https://www.fightcore.gg/' target='_blank' rel='noreferrer noopener'>FightCore</Link> is an in-depth melee frame data resource which includes a "Crouch Cancel Calculator" that breaks down knockdown percentages across all hitboxes and even offers move staleness considerations.
+                </Typography>
             </Grid>      
         </Grid>
 

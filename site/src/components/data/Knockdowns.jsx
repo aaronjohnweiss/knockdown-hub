@@ -18,6 +18,7 @@ import ys_knockdown_data from '../../../../shared/ys_knockdown_data.json';
 import MovesetFilter from './MovesetFilter';
 import PresetChip from './PresetChip';
 import KnockdownTable from './KnockdownTable';
+import Quiz from './Quiz';
 
 export const Knockdowns = () => {
     const [offenderId, setOffenderId] = React.useState(0);
@@ -145,6 +146,15 @@ export const Knockdowns = () => {
                         preset={moveset_list}
                         handleAction={handlePresetClick}
                     />                 
+                </Box>
+                <Box paddingY={3}>
+                    <Typography variant='h5' component='h2' sx={{ paddingY: 2 }} >
+                        Test Your Knowledge
+                    </Typography>
+                    <Typography>
+                        Create a short quiz based on the characters and moves you have selected.<br /><br />
+                    </Typography>
+                    <Quiz rows={tableRows} offenderId={offenderId} recipientId={recipientId} />
                 </Box>
             </Grid>
             <Grid size={{ xs: 12, sm: 12, md: 5 }} gap={1}>
