@@ -11,12 +11,14 @@ import {
     FormControlLabel,
     Radio,
     Box,
-    FormGroup,
+    FormHelperText,
     Switch,
     Typography,
     useTheme,
-    useMediaQuery
+    useMediaQuery,
+    Alert
 } from "@mui/material";
+import { useForm } from "react-hook-form";
 import characters from '../../../../shared/characters.json';
 
 function getSlightlyRandomPercent(omit, exclude) {
@@ -40,7 +42,7 @@ function shuffleArray(array) {
     }
 }
 
-const QuizEntry = ({ move, percent, offenderId, recipientId, reveal=false, isCc }) => {
+const QuizEntry = ({ move, percent, offenderId, recipientId, reveal=false, isCc, register, errors }) => {
     const options = React.useMemo(() => {
         const opts = [0, 1, 2, 3];
         opts.forEach((_, index) => {
@@ -59,14 +61,15 @@ const QuizEntry = ({ move, percent, offenderId, recipientId, reveal=false, isCc 
 
     return (
         <Box paddingY={2}>
-            <FormControl>
+            <FormControl error={errors}>
                 <FormLabel 
                     id={`${move}-quiz-label`}
                     sx={{ color: theme => reveal === null ? null : (`${selectedValue}` === `${percent}`) ? theme.palette.success.main : theme.palette.error.main }}
                 >
-                    {`${characters[offenderId].name} `}
+                    {`${errors ? '* ' : ''}${characters[offenderId].name} `}
                     <b>{move} </b>
-                    {`knocks down ${characters[recipientId].name} ${isCc ? 'through crouch ' : ''} at..`}
+                    {`knocks down ${characters[recipientId].name} `}
+                    <b>{isCc ? 'through crouch ' : ''}</b> at...
                 </FormLabel>
                 <RadioGroup
                     row
@@ -76,20 +79,24 @@ const QuizEntry = ({ move, percent, offenderId, recipientId, reveal=false, isCc 
                     onChange={handleChange}
                 >
                     {options.map((val, idx) => <FormControlLabel 
-                            key={`${idx}-value`} 
-                            value={val} 
-                            control={<Radio />} 
-                            label={`${val}%`} 
-                            sx={{ color: theme => reveal === null ? null : (val === percent) ? theme.palette.success.main : theme.palette.error.main }}
-                        />)}
+                        key={`${idx}-value`} 
+                        value={val} 
+                        {...register}
+                        control={<Radio />} 
+                        label={`${val}%`} 
+                        sx={{ color: theme => reveal === null ? null : (val === percent) ? theme.palette.success.main : theme.palette.error.main }}
+                    />)}
                 </RadioGroup>
+                <FormHelperText>{errors && errors.message}</FormHelperText>
             </FormControl>
         </Box>
     )
 }
 
 const Quiz = ({ rows=[], offenderId, recipientId }) => {
+    const { handleSubmit, register, formState: { errors, isSubmitted, isSubmitSuccessful }, reset } = useForm();
     const [revealAnswers, setRevealAnswers] = React.useState(null);
+    const [answers, setAnswers] = React.useState({});
     const [ccChecked, setCcChecked] = React.useState(null);
     const theme = useTheme();
     const fullScreen = useMediaQuery(theme.breakpoints.down('sm'));
@@ -97,17 +104,21 @@ const Quiz = ({ rows=[], offenderId, recipientId }) => {
     const quizRows = React.useMemo(() => {
         const data = [...rows];
         shuffleArray(data);
+        reset();
         return data;
-    }, [rows]);
+    }, [rows, reset]);
 
-    const handleSubmit = React.useCallback(() => {
+    const onSubmit = (values) => {
         setRevealAnswers(true);
-    }, []);
+        console.log(values);
+        setAnswers(values);
+    };
 
     const handleClose = React.useCallback(() => {
         setOpen(false);
         setRevealAnswers(null);
-    }, []);
+        reset();
+    }, [reset]);
 
     const handleChange = (event) => {
         setCcChecked(event.target.checked);
@@ -127,30 +138,49 @@ const Quiz = ({ rows=[], offenderId, recipientId }) => {
                 </Box>
             </Box>
             <Dialog open={open} onClose={handleClose} fullScreen={fullScreen}>
-                <DialogTitle>
-                    {`${characters[offenderId].name} vs. ${characters[recipientId].name}`}
-                </DialogTitle>
-                <DialogContent>
-                    <FormGroup>
-                        {quizRows.map((r, idx) => <QuizEntry 
-                            key={`${idx}-entry`}
-                            move={r.move} 
-                            percent={ccChecked ? r.cc : r.asdi} 
-                            offenderId={offenderId} 
-                            recipientId={recipientId} 
-                            reveal={revealAnswers}
-                            isCc={ccChecked}
-                        />)}
-                    </FormGroup>
-                </DialogContent>
-                <DialogActions>
-                    <Button onClick={handleClose}>
-                        Close
-                    </Button>
-                    <Button onClick={handleSubmit} variant='outlined'>
-                        Submit
-                    </Button>
-                </DialogActions>
+                <form onSubmit={handleSubmit(onSubmit)}>
+                    <DialogTitle>
+                        {`${characters[offenderId].name} vs. ${characters[recipientId].name}`}
+                    </DialogTitle>
+                    <DialogContent>
+                        {quizRows.map((r, idx) => <>
+                            <QuizEntry 
+                                key={`${idx}-entry`}
+                                move={r.move} 
+                                percent={ccChecked ? r.cc : r.asdi} 
+                                offenderId={offenderId} 
+                                recipientId={recipientId} 
+                                reveal={revealAnswers}
+                                isCc={ccChecked}
+                                register={register(`${r.move}`, {
+                                    validate: (value) => {
+                                        return (value !== null || "Must select an answer.")
+                                    }
+                                })}
+                                errors={errors[r.move]}
+                            />
+                        </>
+                        )}
+                        {isSubmitted && !isSubmitSuccessful && (
+                            <Alert severity='error'>
+                                Resolve errors and resubmit.
+                            </Alert>
+                        )}
+                        {isSubmitted && isSubmitSuccessful && (
+                            <Alert severity='success'>
+                                {quizRows.reduce((acc, cur) => (ccChecked ? cur.cc === parseInt(answers[cur.move]) : cur.asdi === parseInt(answers[cur.move])) ? acc + 1 : acc, 0)} out of {quizRows.length} correct.
+                            </Alert>
+                        )}
+                    </DialogContent>
+                    <DialogActions>
+                        <Button onClick={handleClose}>
+                            Close
+                        </Button>
+                        <Button type='submit' variant='outlined'>
+                            Submit
+                        </Button>
+                    </DialogActions>
+                </form>
             </Dialog>
         </>
     )
