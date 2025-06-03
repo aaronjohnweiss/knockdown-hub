@@ -15,6 +15,7 @@ import knockdown_data from '../../../shared/knockdown_data.json';
 import cc_knockdown_data from '../../../shared/cc_knockdown_data.json';
 import characters from '../../../shared/characters.json';
 import KnockdownTable from './KnockdownTable';
+import MoveCloud from './experimental/MoveCloud';
 
 
 export const RealtimeKnockdowns = ({ offender, recipient, handleSwap, allowedMoves, playerPercents }) => {
@@ -92,12 +93,7 @@ export const RealtimeKnockdowns = ({ offender, recipient, handleSwap, allowedMov
                 </Box>
             </Grid>
             <Grid size={{ xs: 12 }}>
-                <KnockdownTable 
-                    rows={tableRows} 
-                    recipientPercent={playerPercents[recipient.playerIndex]} 
-                    useCcPercents={useCcPercents} 
-                    toggleUseCcPercents={handleCcToggle}
-                />
+                <MoveCloud offender={offender} recipient={recipient} allowedMoves={allowedMoves} playerPercents={playerPercents} />
             </Grid>
         </Grid>
     )

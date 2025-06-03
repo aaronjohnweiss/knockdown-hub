@@ -12,11 +12,11 @@ export const usePlayerPercents = () => {
                 // mock data lmao
                 setPlayerPercents({
                     0: 114,
-                    1: 28
+                    1: 57
                 })
             }
         }
-        // useMockDataIfDevelop();
+        useMockDataIfDevelop();
         
 
     }, []);

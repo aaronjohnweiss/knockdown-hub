@@ -16,12 +16,12 @@ export const useNewGame = () => {
                 // mock data lmao
                 setUser('aSig#701')
                 setPlayers([
-                    { characterId: 0, connectCode: 'asig#701', user: true, displayName: 'aSig', playerIndex: 0, characterColor: 0 },
-                    { characterId: 15, connectCode: 'abc#1', user: false, displayName: 'Truest Guy That YK', playerIndex: 1, characterColor: 1 }
+                    { characterId: 2, connectCode: 'asig#701', user: true, displayName: 'aSig', playerIndex: 0, characterColor: 0 },
+                    { characterId: 19, connectCode: 'abc#1', user: false, displayName: 'Truest Guy That YK', playerIndex: 1, characterColor: 1 }
                 ])
             }
         }
-        // useMockDataIfDevelop();
+        useMockDataIfDevelop();
 
     }, []);
 
